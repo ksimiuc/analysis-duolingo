@@ -1,0 +1,31 @@
+:root {
+  /* Colors */
+  --color-bg: #ffc506;
+  --color-surface: #1a1a1a;
+  --color-border: #333333;
+  --color-text: #ffc506;;
+  --color-muted: #8a8a8a;
+  --color-accent: #000000;
+
+  /* Fonts (two only) */
+  --font-heading: "Press Start 2P", monospace;
+  --font-body: "Monaspace Neon", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Font sizes */
+  --text-sm: 14px;
+  --text-md: 16px;
+  --text-lg: 20px;
+  --text-heading: 24px;
+
+  /* Spacing scale: multiples of 8px */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-6: 48px;
+  --space-8: 64px;
+
+  /* Basics */
+  --border-width: 2px;
+  --content-width: 960px;
+}
