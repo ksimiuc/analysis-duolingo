@@ -87,7 +87,7 @@ Each exercise has tiered hints, then the full solution.
 
 ## Phases
 
-0. Tools: Node.js, Git, GitHub repo, VS Code extensions
+0. Tools: Node.js, Git, GitHub repo, VS Code extensions- done
 1. HTML: structure of one item page
 2. CSS: the arcade look, layout, the axioms index
 3. JavaScript: symbol keyboard and statement builder
@@ -99,4 +99,5 @@ Each exercise has tiered hints, then the full solution.
 
 ## Current status
 
-Phase 0 not started. No website code written yet.
+Phase 0 has been done. No website code written yet.
+Working on Phase 1
