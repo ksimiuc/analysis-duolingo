@@ -18,9 +18,6 @@ main {
   padding: var(--space-4);
 }
 
-nav {
-    color: black;
-}
 
 .site-header,
 .site-footer {
@@ -46,7 +43,7 @@ nav {
 }
 
 .site-header nav a {
-  color: var(--color-text);
+  color: var(--color-nav);
   margin-left: var(--space-3);
 }
 
