@@ -7,6 +7,7 @@ function readAnswer() {
   for (const tile of answerBar.querySelectorAll(".tile")) {
     text += tile.dataset.symbol;
   }
+  console.log(text);
   return text.replaceAll(" ", "");
 }
 
