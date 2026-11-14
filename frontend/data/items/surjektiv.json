@@ -2,6 +2,6 @@
     "id": "surjektiv",
     "name": "Surjektivitat",
     "type": "definition",
-    "definition": ["∀","x", ",", "y", "∈", "A", ":","f(x)", "=","f(y)", "⇒", "x", "="]
+    "solutions": ["∀","x", ",", "y", "∈", "A", ":","f(x)", "=","f(y)", "⇒", "x", "="]
     
 }
