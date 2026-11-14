@@ -12,7 +12,7 @@
 </head>
 <body>
   <header class="site-header">
-    <a class="site-title" href="index.html" aria-label="Analingo"><span class="flip">A </span>nalingo</a>
+    <a class="site-title" href="index.html" aria-label="Analingo"><span class="flip">A</span>nalingo</a>
     <nav>
     <a href="index.html">Karte</a>
     <a href="axiome.html">Axiome</a>
@@ -22,13 +22,17 @@
 
   <main>
     <!-- page.js fills in the title and the question from the JSON file -->
-    <!-- The title on the left, the buttons on the right -->
+    <!-- The title on the left, the buttons on the bottom -->
     <div class="title-row">
       <h1>Lädt …</h1>
       <div class="actions">
         <button type="button" id="check-button">Prüfen</button>
         <button type="button" id="backspace-button">⌫</button>
-        <button type="button" id="clear-button">Leeren</button>
+        <button type="button" id="clear-button" aria-label="Leeren">
+          <span class="label">Leeren</span>
+          <span class="label-hover">∅</span>
+        </button>
+
         <button type="button" id="random-button">Random</button>
       </div>
     </div>
@@ -51,3 +55,4 @@
   <script type="module" src="js/random.js"></script>
 </body>
 </html>
+
