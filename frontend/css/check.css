@@ -13,7 +13,8 @@
 
 #check-button,
 #backspace-button,
-#clear-button {
+#clear-button,
+#random-button {
   padding: var(--space-2) var(--space-3);
   font-family: var(--font-heading);
   font-size: var(--text-sm);

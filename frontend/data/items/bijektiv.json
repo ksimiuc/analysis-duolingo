@@ -1,0 +1,7 @@
+{
+    "id": "bijektiv",
+    "name": "Bijektivität",
+    "type": "definition",
+    "kapitel": "1",
+    "solutions": ["∀x1,x2∈A:f(x₁)=f(x₂)⇒x1=x2∧∀ y ∈ B ∃ x ∈ A : f(x) = y"]
+}

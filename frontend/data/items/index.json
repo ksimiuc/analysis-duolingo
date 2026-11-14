@@ -1,0 +1,7 @@
+{
+    "items": [
+        {"id": "injektiv", "type": "definition"},
+        {"id":"surjektiv", "type":"definition"},
+        {"id": "bijektiv", "type":"definition"}
+    ]
+}

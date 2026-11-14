@@ -11,6 +11,15 @@
   <link rel="stylesheet" href="css/check.css">
 </head>
 <body>
+  <header class="site-header">
+    <a class="site-title" href="index.html">Analysis Duolingo</a>
+    <nav>
+    <a href="index.html">Karte</a>
+    <a href="axiome.html">Axiome</a>
+    <a href="fortschritt.html">Fortschritt</a>
+    </nav>
+  </header>
+
   <main>
     <!-- page.js fills in the title and the question from the JSON file -->
     <h1>Lädt …</h1>
@@ -24,6 +33,7 @@
       <button type="button" id="check-button">Prüfen</button>
       <button type="button" id="backspace-button">⌫</button>
       <button type="button" id="clear-button">Leeren</button>
+      <button type="button" id="random-button">Random</button>
     </div>
 
     <!-- page.js writes "Richtig!" or "Noch nicht" here -->
@@ -35,5 +45,6 @@
   <script src="js/Keyboard.js"></script>
   <!-- type="module" is needed because page.js uses await -->
   <script type="module" src="js/page.js"></script>
+  <script type="module" src="js/random.js"></script>
 </body>
 </html>
