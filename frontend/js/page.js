@@ -14,7 +14,7 @@ const PROMPTS = {
 };
 function fill(template, item){
     let text = template;
-    for (const key of ["name, "setup"]) {
+    for (const key of ["name", "setup"]) {
         text = text.replaceALL(`{${key}}`, item[key] ?? "")}
 }
 
