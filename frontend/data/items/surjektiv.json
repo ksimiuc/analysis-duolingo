@@ -1,7 +1,8 @@
 {
-    "id": "surjektiv",
-    "name": "Surjektivitat",
-    "type": "definition",
-    "solutions": ["∀x1∈A:f(x)=f(y)⇒x1=x2"]
-    
+  "id": "surjektiv",
+  "type": "definition",
+  "kapitel": 1,
+  "name": "Surjektivität",
+  "setup": "Sei f : A → B eine Funktion.",
+  "solutions": ["∀ y ∈ B ∃ x ∈ A : f(x) = y"]
 }
