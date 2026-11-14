@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Symboltastatur Test</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/keyboard.css">
+</head>
+<body>
+  <main>
+    <h1>Tastatur-Test</h1>
+
+    <!-- The bar where the answer is built -->
+    <div id="answer-slots">
+      <span class="answer-hint">Tippe auf ein Symbol</span>
+    </div>
+
+    <!-- Keyboard.js fills this box with buttons -->
+    <div id="symbol-keyboard"></div>
+  </main>
+
+  <!-- Last, so the two boxes above already exist when the script runs -->
+  <script src="js/Keyboard.js"></script>
+</body>
+</html>
