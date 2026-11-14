@@ -99,10 +99,15 @@ a {
     border-color: var(--color-accent);
     text-decoration: none;
 }
-.flip:hover {
-display: inline-block;
-transform: scaleY(-1);
+/* The "A" in the Analingo title */
+.flip {
+  display: inline-block;       /* always, not only on hover: a transform needs a box, and the box must not change on hover */
+  line-height: 1;              /* the box is exactly 1em tall, so the numbers below are exact */
+  transform-origin: 50% 43.75%; /* flip around the middle of the letter A, not the middle of its box */
+}                              /* (in this pixel font the A fills the top 7/8 of the box: its middle is 43.75% from the top) */
 
+.flip:hover {
+  transform: scaleY(-1);       /* mirror the A upside down */
 }
 
 
