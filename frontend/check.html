@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Antwort prüfen</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/keyboard.css">
+  <link rel="stylesheet" href="css/check.css">
+</head>
+<body>
+  <main>
+    <h1>Injektiv</h1>
+    <p>Eine Funktion f : X → Y heisst injektiv, wenn …</p>
+
+    <!-- The bar and the check button side by side -->
+    <div class="answer-row">
+      <!-- data-solution: the stored correct answer, symbols glued together -->
+      <div id="answer-slots" data-solution="∀x₁,x₂∈X:f(x₁)=f(x₂)⇒x₁=x₂">
+        <span class="answer-hint">Tippe auf ein Symbol</span>
+      </div>
+      <button type="button" id="check-button">Prüfen</button>
+    </div>
+
+    <!-- check.js writes "Richtig!" or "Noch nicht" here -->
+    <p id="feedback"></p>
+
+    <div id="symbol-keyboard"></div>
+  </main>
+
+  <script src="js/Keyboard.js"></script>
+  <script src="js/check.js"></script>
+</body>
+</html>
