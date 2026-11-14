@@ -1,0 +1,7 @@
+{
+    "id": "surjektiv",
+    "name": "Surjektivitat",
+    "type": "definition",
+    "definition": ["∀","x", ",", "y", "∈", "A", ":","f(x)", "=","f(y)", "⇒", "x", "="]
+    
+}
