@@ -26,3 +26,14 @@ checkButton.addEventListener("click", () => {
     feedback.textContent = "Noch nicht.";
   }
 });
+
+// 3. "⌫" removes the last tile
+document.getElementById("backspace-button").addEventListener("click", () => {
+  answerBar.querySelector(".tile:last-of-type")?.remove();
+});
+
+// 4. "Leeren" removes all tiles and the old feedback
+document.getElementById("clear-button").addEventListener("click", () => {
+  for (const tile of answerBar.querySelectorAll(".tile")) tile.remove();
+  feedback.textContent = "";
+});

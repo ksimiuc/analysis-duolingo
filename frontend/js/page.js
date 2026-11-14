@@ -46,3 +46,14 @@ document.getElementById("check-button").addEventListener("click", () => {
     feedback.textContent = "Noch nicht.";
   }
 });
+
+// Remove the last tile
+document.getElementById("backspace-button").addEventListener("click", () => {
+  answerBar.querySelector(".tile:last-of-type")?.remove();
+});
+
+// Remove all tiles
+document.getElementById("clear-button").addEventListener("click", () => {
+  for (const tile of answerBar.querySelectorAll(".tile")) tile.remove();
+  feedback.textContent = "";
+});
