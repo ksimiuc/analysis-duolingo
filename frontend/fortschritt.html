@@ -24,10 +24,19 @@
 </header>
 
 <main>
+    <!-- FORTSCHRITT PAGE: all points ever collected; fortschritt.js fills in the number -->
+    <p id="total-points">Gesammelt: 0 Punkte</p>
+
     <h1>Fortschritt</h1>
     <!-- FORTSCHRITT PAGE: fortschritt.js puts one box per chapter in here -->
     <div id="progress-list"></div> <!-- starts empty; filled by the script -->
     <!-- end of the Fortschritt boxes -->
+
+    <!-- FORTSCHRITT PAGE: spend 10 points, then go to the game -->
+    <div class="pay-row">
+      <button type="button" id="pay-button">Pay 10 points</button>
+      <p id="pay-message"></p> <!-- shows "not enough points" if needed -->
+    </div>
 </main>
 
 <footer class="site-footer">

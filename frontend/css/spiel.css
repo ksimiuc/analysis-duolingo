@@ -1,0 +1,44 @@
+/* ===== GAME PAGE (spiel.html) ===== */
+
+body {                                  /* the whole page */
+  margin: 0;                            /* no white edge around the page */
+  min-height: 100vh;                    /* at least as tall as the window (vh = % of window height) */
+  display: grid;                        /* grid + place-items is the shortest way to centre something */
+  place-items: center;                  /* put the game in the middle, both ways */
+  background: var(--color-bg);          /* plain yellow */
+  color: var(--color-accent);           /* black text */
+  font-family: var(--font-heading);     /* pixel font */
+}                                       /* end of the page */
+
+.game {                                 /* the column: score, game, message, button */
+  display: flex;                        /* line the pieces up ... */
+  flex-direction: column;               /* ... from top to bottom */
+  align-items: center;                  /* centred left to right */
+  gap: var(--space-2);                  /* space between the pieces */
+  padding: var(--space-2);              /* a 16px edge on small phones */
+}                                       /* end of the column */
+
+#game {                                 /* the canvas the game is drawn on */
+  width: min(90vw, 480px);              /* big on screen: 90% of the window, but at most 480px */
+  image-rendering: pixelated;           /* scale up without blurring: sharp, square pixels */
+  border: var(--border-width) solid var(--color-accent); /* a black frame around the play area */
+  cursor: pointer;                      /* you can click it to fly */
+  touch-action: manipulation;           /* on phones: fast taps, no double-tap zoom */
+}                                       /* end of the canvas */
+
+#score,                                 /* the score number */
+#message {                              /* and the message line */
+  margin: 0;                            /* no extra browser spacing */
+  font-size: var(--text-sm);            /* small pixel text */
+  text-align: center;                   /* centred */
+}                                       /* end of the text */
+
+.back-button {                          /* the "Zurück" link, styled as a button */
+  padding: var(--space-2) var(--space-3); /* space inside: top/bottom, left/right */
+  font-size: var(--text-sm);            /* same size as the other buttons */
+  background: var(--color-accent);      /* black */
+  color: var(--color-bg);               /* yellow text */
+  text-decoration: none;                /* no underline */
+}                                       /* end of the button */
+
+/* ===== end of the game page ===== */
