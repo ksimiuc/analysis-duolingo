@@ -60,5 +60,9 @@
 
 #clear-button:hover .label-hover,
 #clear-button:focus-visible .label-hover{
-  visibility: hidden;
+  visibility: visible;
+}
+#clear-button .label {
+  position: relative;
+  top: 5px;
 }
