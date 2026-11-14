@@ -81,5 +81,13 @@ main {
 
 .item-list li {
   padding: var(--space-2) 0;
-  border-bottom: var(--border-width) solid var(--color-border);
+  /*border-bottom: var(--border-width) solid var(--color-border);*/
+}
+
+.item-list a {
+    padding: var(--space-1);
+    color: var(--color-bg);
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    text-decoration: none;
 }
