@@ -38,6 +38,8 @@ function readAnswer() {
 
 document.getElementById("check-button").addEventListener("click", () => {
   if (solutions.includes(readAnswer())) {   // the changed line
+    const count = Number(localStorage.getItem("correctAttempts")) + 1;
+    localStorage.setItem("correctAttempts", count);
     feedback.textContent = "Richtig!";
   } else {
     feedback.textContent = "Noch nicht.";
