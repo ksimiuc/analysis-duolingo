@@ -1,7 +1,13 @@
 {
     "id": "injektiv",
-    "name": "Injektivit",
+    "name": "Injektivität",
     "type": "definition",
     "kapitel": "1",
-    "solutions": ["∀","x", ",", "y", "∈", "A", ":","f", "(", "x1", ")", "=","f","(","x2",")", "⇒", "x1", "=", "x2"]
+    "setup": "Sei f : X → Y eine Funktion.",
+    "solutions": [
+        "∀ x1 , x2 ∈ X : f ( x1 ) = f ( x2 ) ⇒ x1 = x2",
+        "∀ x₁ , x₂ ∈ X : f ( x₁ ) = f ( x₂ ) ⇒ x₁ = x₂",
+        "∀ x1 , x2 ∈ X : x1 ≠ x2 ⇒ f ( x1 ) ≠ f ( x2 )",
+        "∀ x₁ , x₂ ∈ X : x₁ ≠ x₂ ⇒ f ( x₁ ) ≠ f ( x₂ )"
+    ]
 }

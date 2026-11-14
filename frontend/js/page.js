@@ -15,7 +15,9 @@ const PROMPTS = {
 function fill(template, item){
     let text = template;
     for (const key of ["name", "setup"]) {
-        text = text.replaceALL(`{${key}}`, item[key] ?? "")}
+        text = text.replaceAll(`{${key}}`, item[key] ?? "");
+    }
+    return text;
 }
 
 document.querySelector("h1").textContent = item.name;
@@ -44,4 +46,15 @@ document.getElementById("check-button").addEventListener("click", () => {
   } else {
     feedback.textContent = "Noch nicht.";
   }
+});
+
+// Remove the last tile
+document.getElementById("backspace-button").addEventListener("click", () => {
+  answerBar.querySelector(".tile:last-of-type")?.remove();
+});
+
+// Remove all tiles
+document.getElementById("clear-button").addEventListener("click", () => {
+  for (const tile of answerBar.querySelectorAll(".tile")) tile.remove();
+  feedback.textContent = "";
 });
