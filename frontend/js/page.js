@@ -1,6 +1,6 @@
 //which item? read it from the adress: iterface html?item=injectiv or whatever
 const params = new URLSearchParams(location.search);
-const id= params.get("item") ?? "injektiv";
+const id= params.get("id") ?? "injektiv";
 
 // 2. Load that item's data file and tun text into an objekt"
 const response = await fetch(`data/items/${id}.json`);
@@ -15,7 +15,8 @@ const PROMPTS = {
 function fill(template, item){
     let text = template;
     for (const key of ["name", "setup"]) {
-        text = text.replaceALL(`{${key}}`, item[key] ?? "")}
+        text = text.replaceAll(`{${key}}`, item[key] ?? "")}
+    return text;
 }
 
 document.querySelector("h1").textContent = item.name;
@@ -33,7 +34,7 @@ function readAnswer() {
   for (const tile of answerBar.querySelectorAll(".tile")) {
     text += tile.dataset.symbol;
   }
-  return text;
+  return text.replaceAll(" ", "");
 }
 
 document.getElementById("check-button").addEventListener("click", () => {
