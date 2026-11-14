@@ -2,5 +2,6 @@
     "id": "injektiv",
     "name": "Injektivit",
     "type": "definition",
+    "kapitel": "1",
     "definition": ["∀","x", ",", "y", "∈", "A", ":","f(x)", "=","f(y)", "⇒", "x", "=", "y"]
 }
