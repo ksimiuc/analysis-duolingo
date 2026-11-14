@@ -1,0 +1,6 @@
+{
+    "id": "injektiv",
+    "name": "Injektivit",
+    "type": "definition",
+    "definition": ["∀","x", ",", "y", "∈", "A", ":","f(x)", "=","f(y)", "⇒", "x", "=", "y"]
+}
