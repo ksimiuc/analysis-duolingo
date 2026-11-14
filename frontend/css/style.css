@@ -99,3 +99,10 @@ a {
     border-color: var(--color-accent);
     text-decoration: none;
 }
+.flip:hover {
+display: inline-block;
+transform: scaleY(-1);
+
+}
+.s
+

@@ -12,7 +12,7 @@
 </head>
 <body>
   <header class="site-header">
-    <a class="site-title" href="index.html">Analysis Duolingo</a>
+    <a class="site-title" href="index.html" aria-label="Analingo"><span class="flip">A </span>nalingo</a>
     <nav>
     <a href="index.html">Karte</a>
     <a href="axiome.html">Axiome</a>
@@ -22,18 +22,21 @@
 
   <main>
     <!-- page.js fills in the title and the question from the JSON file -->
-    <h1>Lädt …</h1>
+    <!-- The title on the left, the buttons on the right -->
+    <div class="title-row">
+      <h1>Lädt …</h1>
+      <div class="actions">
+        <button type="button" id="check-button">Prüfen</button>
+        <button type="button" id="backspace-button">⌫</button>
+        <button type="button" id="clear-button">Leeren</button>
+        <button type="button" id="random-button">Random</button>
+      </div>
+    </div>
     <p id="prompt"></p>
 
-    <!-- The bar and the buttons side by side -->
-    <div class="answer-row">
-      <div id="answer-slots">
-        <span class="answer-hint">Tippe auf ein Symbol</span>
-      </div>
-      <button type="button" id="check-button">Prüfen</button>
-      <button type="button" id="backspace-button">⌫</button>
-      <button type="button" id="clear-button">Leeren</button>
-      <button type="button" id="random-button">Random</button>
+    <!-- The answer bar now has the full width -->
+    <div id="answer-slots">
+      <span class="answer-hint">Tippe auf ein Symbol</span>
     </div>
 
     <!-- page.js writes "Richtig!" or "Noch nicht" here -->

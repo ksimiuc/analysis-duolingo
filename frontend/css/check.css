@@ -1,14 +1,20 @@
-/* The bar takes all the space, the button sits to its right */
-.answer-row {
+/* Title on the left, buttons pushed to the right */
+.title-row {
   display: flex;
-  align-items: flex-end;
+  flex-wrap: wrap;               /* on a phone the buttons drop below the title */
+  align-items: center;
+  justify-content: space-between;
   gap: var(--space-2);
-  margin-bottom: var(--space-2);
 }
 
-.answer-row #answer-slots {
-  flex: 1;
-  margin-bottom: 0;
+.title-row h1 {
+  margin: 0;
+}
+
+/* The four buttons in their own little row */
+.actions {
+  display: flex;
+  gap: var(--space-2);
 }
 
 #check-button,
@@ -29,4 +35,30 @@
   font-family: var(--font-heading);
   font-size: var(--text-sm);
   color: var(--color-accent);
+}
+#clear-button {
+  display:inline-grid;
+  place-item:center;
+
+}
+
+#clear-button span {
+  grid-area:1/1;
+}
+
+.label-hover {
+  font-family: var(--font-body);
+  font-size: var(--text-heading);
+  visibility: hidden;
+
+}
+
+#clear-button:hover .label,
+#clear-button:focus-visible .label {
+  visibility: hidden;
+}
+
+#clear-button:hover .label-hover,
+#clear-button:focus-visible .label-hover{
+  visibility: hidden;
 }
