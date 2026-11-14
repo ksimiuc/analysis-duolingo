@@ -1,6 +1,6 @@
 {
     "id": "injektiv",
-    "name": "Injektivit",
+    "name": "Injektivität",
     "type": "definition",
     "kapitel": "1",
     "solutions": ["∀","x1", ",", "x2", "∈", "A", ":","f(x1)", "=","f(x2)", "⇒", "x1", "=", "x2"]

@@ -29,16 +29,11 @@ checkButton.addEventListener("click", () => {
 
 // 3. "⌫" removes the last tile
 document.getElementById("backspace-button").addEventListener("click", () => {
-  const tiles = answerBar.querySelectorAll(".tile");
-  // tiles[0] is the first tile, so the last one is at tiles.length - 1.
-  // "?." means: if there is no tile (empty bar), do nothing.
-  tiles[tiles.length - 1]?.remove();
+  answerBar.querySelector(".tile:last-of-type")?.remove();
 });
 
-// 4. "Leeren" removes every tile and the old feedback
+// 4. "Leeren" removes all tiles and the old feedback
 document.getElementById("clear-button").addEventListener("click", () => {
-  for (const tile of answerBar.querySelectorAll(".tile")) {
-    tile.remove();
-  }
+  for (const tile of answerBar.querySelectorAll(".tile")) tile.remove();
   feedback.textContent = "";
 });
