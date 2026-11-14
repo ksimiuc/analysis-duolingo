@@ -17,6 +17,7 @@ function fill(template, item){
     for (const key of ["name", "setup"]) {
         text = text.replaceAll(`{${key}}`, item[key] ?? "")}
     return text;
+    
 }
 
 document.querySelector("h1").textContent = item.name;
@@ -34,6 +35,7 @@ function readAnswer() {
   for (const tile of answerBar.querySelectorAll(".tile")) {
     text += tile.dataset.symbol;
   }
+  console.log(text);
   return text.replaceAll(" ", "");
 }
 
