@@ -1,4 +1,4 @@
-const response = await fetch("data/index.json");
+const response = await fetch("data/items/index.json");
 const index = await response.json();
 
 const definitions = index.items.filter((item)=>item.type === "definition");
