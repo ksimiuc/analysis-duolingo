@@ -48,6 +48,7 @@ a {
   font-size: var(--text-lg);
   color: var(--color-accent);
   text-decoration: none;
+  white-space: nowrap; /* never break "Analingo" into two lines, not even after the flipping A */
 }
 
 .site-header nav a {
