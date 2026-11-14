@@ -12,6 +12,10 @@ h1, h2 {
   color: var(--color-accent);
 }
 
+p {
+    color: var(--color-accent);
+}
+
 main {
   max-width: var(--content-width);
   margin: 0 auto;
