@@ -88,7 +88,7 @@ Each exercise has tiered hints, then the full solution.
 ## Phases
 
 0. Tools: Node.js, Git, GitHub repo, VS Code extensions- done
-1. HTML: structure of one item page
+1. HTML: structure of one itepum page
 2. CSS: the arcade look, layout, the axioms index
 3. JavaScript: symbol keyboard and statement builder
 4. Data: items as JSON, generate pages from data
