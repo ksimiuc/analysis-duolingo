@@ -12,6 +12,9 @@ const SYMBOL_GROUPS = [
   { name: "Variablen", symbols: ["a", "b", "c", "x", "x1", "x2", "y", "z", "n", "m", "k", "i", "f", "g", "h", "A", "B", "X", "Y", "Z"] },
   { name: "Indizes", symbols: ["₀", "₁", "₂", "ₙ", "ₖ", "²", "ⁿ"] },
   { name: "Zeichen", symbols: ["(", ")", "[", "]", "{", "}", ":", ",", ";", "…"] },
+  { name: "Zahlen", symbols: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"] },
+{ name: "Funktionen", symbols: ["f(x)", "f(y)", "f(x₁)", "f(x₂)", "g(x)", "f(a)", "f(b)", "f⁻¹"] },
+{ name: "Betrag", symbols: ["|", "|x|", "|x−y|", "|f(x)−f(y)|"] },
 ];
 
 // Find the two containers by their agreed ids
