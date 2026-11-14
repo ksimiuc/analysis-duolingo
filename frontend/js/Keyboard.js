@@ -9,7 +9,7 @@ const SYMBOL_GROUPS = [
   { name: "Rechnen", symbols: ["+", "−", "·", "/", "√", "!", "∑", "∏", "∞"] },
   { name: "Analysis", symbols: ["lim", "sup", "inf", "max", "min", "→", "↦", "∘", "⁻¹", "∫", "d", "′"] },
   { name: "Griechisch", symbols: ["α", "β", "γ", "δ", "ε", "λ", "μ", "π", "σ", "φ"] },
-  { name: "Variablen", symbols: ["a", "b", "c", "x", "y", "z", "n", "m", "k", "i", "f", "g", "h", "A", "B", "X", "Y", "Z"] },
+  { name: "Variablen", symbols: ["a", "b", "c", "x", "x1", "x2", "y", "z", "n", "m", "k", "i", "f", "g", "h", "A", "B", "X", "Y", "Z"] },
   { name: "Indizes", symbols: ["₀", "₁", "₂", "ₙ", "ₖ", "²", "ⁿ"] },
   { name: "Zeichen", symbols: ["(", ")", "[", "]", "{", "}", ":", ",", ";", "…"] },
 ];
