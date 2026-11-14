@@ -18,6 +18,10 @@ main {
   padding: var(--space-4);
 }
 
+a {
+    text-decoration: none;
+}
+
 
 .site-header,
 .site-footer {
