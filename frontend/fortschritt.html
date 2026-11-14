@@ -25,12 +25,14 @@
 
 <main>
     <h1>Fortschritt</h1>
-    <p><span id="count">0</span></p>
+    <!-- FORTSCHRITT PAGE: fortschritt.js puts one box per chapter in here -->
+    <div id="progress-list"></div> <!-- starts empty; filled by the script -->
+    <!-- end of the Fortschritt boxes -->
 </main>
 
 <footer class="site-footer">
 <p>Inhalte nach Analysis-Skript ETH Zürich.</p>
 </footer>
-<script type="module" src="js/page.js"></script>
+<script src="js/fortschritt.js"></script> <!-- FORTSCHRITT PAGE: the script that draws the boxes; it sits at the bottom so the <div> above already exists -->
 </body>
 </html>

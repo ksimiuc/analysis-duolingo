@@ -106,3 +106,30 @@ transform: scaleY(-1);
 }
 
 
+
+/* ===== FORTSCHRITT PAGE ===== */
+/* These rules are only used on fortschritt.html: one black box per chapter */
+
+#progress-list {                       /* the container that holds all the boxes */
+  display: flex;                       /* put the boxes side by side */
+  flex-wrap: wrap;                     /* move boxes to a new line when the screen is narrow */
+  gap: var(--space-3);                 /* space between the boxes */
+}                                      /* end of the container */
+
+.progress-box {                        /* one box = one chapter */
+  background: var(--color-accent);     /* black background */
+  padding: var(--space-3);             /* space between the edge of the box and the text */
+  min-width: 160px;                    /* boxes never get thinner than this */
+}                                      /* end of the box */
+
+.progress-box h2,                      /* the chapter title inside a box */
+.progress-box p {                      /* and the count line inside a box */
+  margin: 0;                           /* remove the browser's default space around them */
+  color: var(--color-bg);              /* yellow text on the black box */
+}                                      /* end of the text rules */
+
+.progress-box p {                      /* only the count line */
+  margin-top: var(--space-1);          /* a small gap below the chapter title */
+}                                      /* end of the count line */
+
+/* ===== end of the Fortschritt page ===== */

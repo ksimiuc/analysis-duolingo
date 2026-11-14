@@ -42,6 +42,7 @@ function fill(template, item) {
 
 // 5. Load the item. try/catch: if anything goes wrong, show it on the page
 let solution = null;
+let chapter = null; // FOR THE FORTSCHRITT PAGE: which chapter this item belongs to, filled in below
 try {
   const response = await fetch(`data/items/${id}.json`);
   const item = await response.json();
@@ -51,6 +52,7 @@ try {
 
   // The solution is a list of tiles: glue them into one string, like readAnswer() does
   solution = item.solutions.join("").replaceAll(" ", "");
+  chapter = String(item.kapitel); // FOR THE FORTSCHRITT PAGE: read the chapter from the JSON; String() because some files say 1, others "1"
 } catch (error) {
   document.querySelector("h1").textContent = "Aufgabe nicht gefunden";
   feedback.textContent = `«${id}» konnte nicht geladen werden. Mit Live Server öffnen?`;
@@ -62,8 +64,12 @@ document.getElementById("check-button").addEventListener("click", () => {
   if (solution === null) return; // no item loaded, nothing to compare with
 
   if (readAnswer() === solution) {
-    const count = Number(localStorage.getItem("correctAttempts")) + 1;
-    localStorage.setItem("correctAttempts", count);
+    // ----- FOR THE FORTSCHRITT PAGE: count this correct answer -----
+    // Saved as one object, e.g. {"1": 3, "2": 1}: chapter number → correct answers
+    const progress = JSON.parse(localStorage.getItem("progress") ?? "{}"); // read the saved counts; empty object if none yet
+    progress[chapter] = (progress[chapter] ?? 0) + 1; // add 1 to this chapter; ?? 0 starts a new chapter at 0
+    localStorage.setItem("progress", JSON.stringify(progress)); // turn the object into text and save it in the browser
+    // ----- end of the Fortschritt part; fortschritt.js reads these counts -----
     feedback.textContent = "Richtig!";
   } else {
     feedback.textContent = "Noch nicht.";
