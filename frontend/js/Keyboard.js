@@ -1,13 +1,17 @@
 // The symbol bank: the same in every exercise.
 // Later this list moves into a data file.
 const SYMBOL_GROUPS = [
-  { name: "Quantoren", symbols: ["∀", "∃", "∃!"] },
-  { name: "Logik", symbols: ["∧", "∨", "¬", "⇒", "⇔"] },
-  { name: "Mengen", symbols: ["∈", "∉", "⊆", "∪", "∩", "∖", "∅", "×"] },
-  { name: "Relationen", symbols: ["=", "≠", "<", "≤", ">", "≥", "~"] },
-  { name: "Zahlbereiche", symbols: ["ℕ", "ℤ", "ℚ", "ℝ"] },
-  { name: "Variablen", symbols: ["x", "y", "x₁", "x₂", "X", "Y", "f", "f(x₁)", "f(x₂)"] },
-  { name: "Zeichen", symbols: ["(", ")", "{", "}", ":", ",", "→", "↦"] },
+  { name: "Quantoren", symbols: ["∀", "∃", "∃!", "∄"] },
+  { name: "Logik", symbols: ["∧", "∨", "¬", "⇒", "⇐", "⇔"] },
+  { name: "Mengen", symbols: ["∈", "∉", "⊆", "⊊", "⊇", "∪", "∩", "∖", "∅", "×", "ᶜ", "𝒫", "⋃", "⋂", "|"] },
+  { name: "Relationen", symbols: ["=", "≠", "<", "≤", ">", "≥", "~", "≈", "≡", ":="] },
+  { name: "Zahlbereiche", symbols: ["ℕ", "ℕ₀", "ℤ", "ℚ", "ℝ", "ℂ"] },
+  { name: "Rechnen", symbols: ["+", "−", "·", "/", "√", "!", "∑", "∏", "∞"] },
+  { name: "Analysis", symbols: ["lim", "sup", "inf", "max", "min", "→", "↦", "∘", "⁻¹", "∫", "d", "′"] },
+  { name: "Griechisch", symbols: ["α", "β", "γ", "δ", "ε", "λ", "μ", "π", "σ", "φ"] },
+  { name: "Variablen", symbols: ["a", "b", "c", "x", "y", "z", "n", "m", "k", "i", "f", "g", "h", "A", "B", "X", "Y", "Z"] },
+  { name: "Indizes", symbols: ["₀", "₁", "₂", "ₙ", "ₖ", "²", "ⁿ"] },
+  { name: "Zeichen", symbols: ["(", ")", "[", "]", "{", "}", ":", ",", ";", "…"] },
 ];
 
 // Find the two containers by their agreed ids
@@ -40,6 +44,7 @@ keyboard.addEventListener("click", (event) => {
   tile.className = "tile";
   tile.dataset.symbol = button.dataset.symbol;
   tile.textContent = button.dataset.symbol;
+  answer.querySelector(".answer-hint")?.remove();
   answer.append(tile);
 });
 
