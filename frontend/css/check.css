@@ -11,7 +11,9 @@
   margin-bottom: 0;
 }
 
-#check-button {
+#check-button,
+#backspace-button,
+#clear-button {
   padding: var(--space-2) var(--space-3);
   font-family: var(--font-heading);
   font-size: var(--text-sm);
