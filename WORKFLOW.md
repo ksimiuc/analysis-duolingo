@@ -4,9 +4,9 @@ How we split the project so we can work in parallel, both learn all three
 languages (HTML, CSS, JavaScript), and stop running into rejected pushes.
 
 - **A: Wanda**, track "Engine": everything you *interact* with
-- **B: ____**, track "World": content, navigation and the overall look
+- **B: Katerina**, track "World": content, navigation and the overall look
 
-Swap A and B if you prefer. The split matters, not who gets which side.
+
 
 ---
 
