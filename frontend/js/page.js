@@ -69,3 +69,6 @@ document.getElementById("check-button").addEventListener("click", () => {
     feedback.textContent = "Noch nicht.";
   }
 });
+
+
+
