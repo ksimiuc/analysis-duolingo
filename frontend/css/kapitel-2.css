@@ -1,0 +1,392 @@
+/* ===== KAPITEL 2 THEME: "Retro-Desktop" =====
+   Inspired by old 90s homepages: a starry black sky, grey computer windows
+   with blue title bars, buttons that look pressed in when you click them,
+   a taskbar with a clock, a sparkly cursor trail and a little helper.
+   Our own version: no images or code from that site, everything is drawn
+   with CSS. Applies to every page whose <body> has data-kapitel="2".
+   The moving parts (title bar buttons, trail, helper, clock) are in
+   js/kapitel-2.js.
+
+   Same trick as before: we give the colour tokens from tokens.css new
+   values, and every rule that uses var(--color-...) picks them up. */
+
+body[data-kapitel="2"] {                 /* only pages that belong to Kapitel 2 */
+  --color-bg: #c0c0c0;                   /* window grey (tiles and buttons use this too) */
+  --color-surface: #dfdfdf;              /* lighter grey, e.g. the keyboard */
+  --color-border: #808080;               /* dark grey lines */
+  --color-text: #000000;                 /* black text on grey */
+  --color-muted: #404040;                /* quiet text */
+  --color-accent: #000080;               /* the one accent: classic navy blue */
+  --color-nav: #000000;                  /* header links */
+
+  /* The two "3D" edges every window and button gets */
+  --bevel-light: #ffffff;                /* the edge where the light comes from (top, left) */
+  --bevel-dark: #404040;                 /* the edge in the shadow (bottom, right) */
+
+  /* The starry sky. Each radial-gradient is one tiny dot; background-size
+     repeats it like a tile, so two tiles of different sizes = many stars. */
+  background-color: #000;                /* black sky (the token --color-bg is the window grey) */
+  background-image:
+    radial-gradient(circle, #fff 1px, transparent 1.5px),
+    radial-gradient(circle, #9cf 1px, transparent 1.5px);
+  background-size: 97px 89px, 53px 61px; /* odd sizes, so the pattern does not look like a grid */
+  background-position: 0 0, 20px 30px;   /* shift the second layer a bit */
+  animation: drift 120s linear infinite; /* the sky slowly moves, see @keyframes drift */
+  padding-bottom: 56px;                  /* room for the taskbar, so it never covers the footer */
+}
+
+@keyframes drift {                       /* an animation: from one state to another */
+  to { background-position: -970px 0, -530px 0; } /* move left by 10 tiles: loops without a jump */
+}
+
+/* Scanlines: thin dark stripes over everything, like an old monitor.
+   ::after is a fake element CSS adds at the end of <body>. */
+body[data-kapitel="2"]::after {
+  content: "";                           /* a pseudo-element needs content, even an empty one */
+  position: fixed;                       /* stays on screen while you scroll */
+  inset: 0;                              /* top, right, bottom, left all 0: covers the screen */
+  background: repeating-linear-gradient(transparent 0 2px, rgb(0 0 0 / 0.12) 2px 3px); /* 2px clear, 1px dark, repeat */
+  pointer-events: none;                  /* clicks go straight through it */
+  z-index: 1000;                         /* on top of everything */
+}
+
+/* ----- Windows: header, main and footer all look like 90s windows ----- */
+
+body[data-kapitel="2"] .site-header,
+body[data-kapitel="2"] main,
+body[data-kapitel="2"] .site-footer {
+  background: var(--color-bg);           /* grey */
+  border: 2px solid;                     /* the border colours come next */
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light); /* top right bottom left: looks raised */
+  max-width: var(--content-width);       /* not wider than the content */
+  margin: var(--space-2) auto;           /* centred, with sky between the windows */
+}
+
+body[data-kapitel="2"] main {
+  padding: 0 0 var(--space-3);           /* no padding on top: the title bar sits flush */
+}
+
+body[data-kapitel="2"] main > *:not(.title-bar) {
+  margin-left: var(--space-3);           /* everything except the title bar gets ... */
+  margin-right: var(--space-3);          /* ... space on the sides */
+}
+
+body[data-kapitel="2"] main.maximised {  /* after a click on □ */
+  max-width: none;                       /* as wide as the screen */
+  margin: 0;
+}
+
+body[data-kapitel="2"] main.minimised > *:not(.title-bar) {
+  display: none;                         /* after a click on _: only the title bar stays */
+}
+
+body[data-kapitel="2"] main.minimised {
+  padding-bottom: 0;
+}
+
+.title-bar {                             /* the blue bar at the top of a window (made by kapitel-2.js) */
+  display: flex;                         /* title left, buttons right */
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px 4px;
+  margin-bottom: var(--space-2);
+  background: linear-gradient(90deg, #000080, #1084d0); /* dark blue fading to light blue */
+  color: #fff;
+  font-weight: 600;
+  font-size: var(--text-sm);
+}
+
+.title-bar-buttons {                     /* the _ □ × group */
+  display: flex;
+  gap: 2px;
+}
+
+/* Every button on a Kapitel 2 page: raised grey box, pressed in on click */
+body[data-kapitel="2"] button,
+.title-bar button,
+body[data-kapitel="2"] .site-header nav a,
+.taskbar button,
+.taskbar a {
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: #000;
+  border: 2px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light); /* raised */
+  border-radius: 0;                      /* square corners, like back then */
+  cursor: pointer;
+}
+
+body[data-kapitel="2"] button:active,
+.title-bar button:active,
+body[data-kapitel="2"] .site-header nav a:active,
+.taskbar button:active,
+.taskbar a:active {
+  border-color: var(--bevel-dark) var(--bevel-light) var(--bevel-light) var(--bevel-dark); /* flipped: looks pressed in */
+}
+
+.title-bar button {
+  width: 20px;                           /* small square buttons */
+  height: 18px;
+  padding: 0;
+  font-size: 12px;
+  line-height: 1;
+}
+
+body[data-kapitel="2"] .site-header nav a {
+  padding: 2px var(--space-1);           /* the nav links become little buttons */
+  margin-left: var(--space-1);
+}
+
+body[data-kapitel="2"] h1 {
+  font-size: var(--text-lg);             /* a bit smaller: the window is the star */
+}
+
+body[data-kapitel="2"] main p a,
+body[data-kapitel="2"] .site-footer a {
+  color: var(--color-accent);            /* navy links ... */
+  text-decoration: underline;            /* ... underlined, the 90s way */
+}
+
+/* Rainbow title: kapitel-2.js puts each letter of the <h1> in its own <span>
+   with --i = its position. Each letter runs the same colour animation,
+   but starts a bit later, so the colours wave along the word. */
+.rainbow span {
+  animation: rainbow 2s linear infinite;
+  animation-delay: calc(var(--i) * -0.1s); /* negative delay: start already part-way through */
+}
+
+@keyframes rainbow {
+  0%, 100% { color: #e00000; }
+  20% { color: #e07000; }
+  40% { color: #00a000; }
+  60% { color: #0070e0; }
+  80% { color: #8000c0; }
+}
+
+/* ----- The two big buttons on kapitel-2.html: desktop programs ----- */
+
+.choice-grid {                           /* holds the two buttons */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* side by side; stacked on a phone */
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.choice {                                /* one big raised button */
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3);
+  background: var(--color-bg);
+  border: 2px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  color: var(--color-text);
+}
+
+.choice-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-md);
+  color: var(--color-accent);
+}
+
+.choice:hover,
+.choice:focus-visible {                  /* mouse over: selected, like a desktop icon */
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.choice:hover .choice-title,
+.choice:focus-visible .choice-title {
+  color: #fff;
+}
+
+.choice:active {                         /* clicked: pressed in */
+  border-color: var(--bevel-dark) var(--bevel-light) var(--bevel-light) var(--bevel-dark);
+}
+
+/* ----- The axiom overview on axiome.html ----- */
+
+.axiom-groups {
+  columns: 2 280px;                      /* up to 2 columns, each at least 280px wide */
+  column-gap: var(--space-4);
+}
+
+.axiom-group {
+  break-inside: avoid;                   /* never split a group across two columns */
+  margin-bottom: var(--space-3);
+  background: #fff;                      /* white list box, sunk into the window */
+  border: 2px solid;
+  border-color: var(--bevel-dark) var(--bevel-light) var(--bevel-light) var(--bevel-dark); /* sunken = flipped bevel */
+  padding: var(--space-1);
+}
+
+.axiom-group h2 {
+  font-size: 12px;
+  margin: 0 0 var(--space-1);
+}
+
+.axiom-group ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.axiom-group a {
+  display: block;
+  padding: 2px 4px;
+  color: var(--color-text);
+}
+
+.axiom-group a:hover {                   /* the selected line in a list box */
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.start-button {                          /* "Alle 16 der Reihe nach" */
+  display: inline-block;
+  margin: var(--space-2) 0 var(--space-3);
+  padding: var(--space-1) var(--space-2);
+  font-family: var(--font-heading);
+  font-size: 12px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  border: 2px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+}
+
+.start-button:active {
+  border-color: var(--bevel-dark) var(--bevel-light) var(--bevel-light) var(--bevel-dark);
+}
+
+/* ----- The desktop icon that appears after closing the window with × ----- */
+
+.desktop-icon {
+  display: block;
+  margin: var(--space-4) auto;
+  color: #fff !important;                /* white label on the sky; !important beats the grey button rule */
+  background: none !important;
+  border: 1px dotted #fff !important;
+  padding: var(--space-1);
+  font-family: var(--font-heading);
+  font-size: 12px;
+}
+
+/* ----- Cursor trail: little stars that follow the mouse ----- */
+
+.trail {
+  position: fixed;                       /* placed by kapitel-2.js with left/top */
+  width: 6px;
+  height: 6px;
+  pointer-events: none;                  /* never catch a click */
+  z-index: 999;
+}
+
+/* ----- Epsi, the helper in the corner ----- */
+
+.epsi {
+  position: fixed;
+  right: var(--space-2);
+  bottom: 56px;                          /* just above the taskbar */
+  width: 220px;
+  z-index: 900;
+  text-align: right;
+}
+
+.epsi[hidden] {
+  display: none;                         /* make sure hidden really hides it */
+}
+
+.epsi-bubble {                           /* the speech bubble */
+  position: relative;
+  text-align: left;
+  background: #ffffcc;                   /* pale yellow note */
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: var(--space-1);
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.epsi-bubble::after {                    /* the little tail of the bubble: a CSS triangle */
+  content: "";
+  position: absolute;
+  right: 24px;
+  bottom: -10px;
+  border: 5px solid transparent;
+  border-top: 5px solid #000;
+}
+
+.epsi-bubble p {
+  margin: 0 0 var(--space-1);
+  color: #000;
+}
+
+.epsi-bubble button {
+  font-size: 12px;
+  margin-right: 4px;
+}
+
+.epsi-face {                             /* Epsi itself: a bouncing ε */
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 40px;
+  color: #ffdd00;
+  text-shadow: 3px 3px 0 #000080;        /* a hard pixel shadow */
+  animation: bounce 1.2s ease-in-out infinite;
+  cursor: pointer;
+}
+
+@keyframes bounce {
+  50% { transform: translateY(-6px); }   /* halfway: a bit higher, then back down */
+}
+
+/* ----- The taskbar at the bottom ----- */
+
+.taskbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 4px;
+  background: var(--color-bg);
+  border-top: 2px solid var(--bevel-light);
+  font-size: 13px;
+  z-index: 950;
+}
+
+.taskbar a,
+.taskbar button {
+  padding: 2px var(--space-1);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.taskbar .tray {                         /* the sunken box on the right: counter and clock */
+  margin-left: auto;                     /* auto margin pushes it all the way right */
+  display: flex;
+  gap: var(--space-2);
+  padding: 2px var(--space-1);
+  border: 1px solid;
+  border-color: var(--bevel-dark) var(--bevel-light) var(--bevel-light) var(--bevel-dark);
+}
+
+/* People who asked their computer for less motion get a calm page */
+@media (prefers-reduced-motion: reduce) {
+  body[data-kapitel="2"],
+  .rainbow span,
+  .epsi-face {
+    animation: none;
+  }
+}
+
+/* On a phone: hide the taskbar extras so it fits on one line */
+@media (max-width: 600px) {
+  .taskbar .counter { display: none; }
+  .epsi { width: 180px; }
+}
+
+/* ===== end of the Kapitel 2 theme ===== */

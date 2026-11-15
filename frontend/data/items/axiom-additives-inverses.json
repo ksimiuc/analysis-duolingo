@@ -1,0 +1,23 @@
+{
+    "id": "axiom-additives-inverses",
+    "type": "axiom",
+    "kapitel": 2,
+    "nummer": 2,
+    "gruppe": "addition",
+    "name": "Additives Inverses",
+    "setup": "Sei ℝ eine Menge mit einer Addition +, einer Multiplikation · und einer Relation ≤.",
+    "prompt": "Wie lautet das Axiom (2) «Additives Inverses»? Baue die Aussage mit der Symboltastatur.",
+    "inWorten": "Zu jedem x gibt es ein Element −x, das x zu 0 ergänzt.",
+    "solutions": [
+        "∀ x ∈ ℝ ∃ (−x) ∈ ℝ : x + (−x) = (−x) + x = 0",
+        "∀ x ∈ ℝ ∃ (−x) ∈ ℝ : x + (−x) = 0",
+        "∀ x ∈ ℝ ∃ y ∈ ℝ : x + y = y + x = 0",
+        "∀ x ∈ ℝ ∃ y ∈ ℝ : x + y = 0"
+    ],
+    "failsIn": [
+        {
+            "structure": "ℕ₀ mit +",
+            "why": "Zu 1 gibt es kein n in ℕ₀ mit 1 + n = 0."
+        }
+    ]
+}

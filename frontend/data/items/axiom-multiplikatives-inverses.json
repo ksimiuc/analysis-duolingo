@@ -1,0 +1,25 @@
+{
+    "id": "axiom-multiplikatives-inverses",
+    "type": "axiom",
+    "kapitel": 2,
+    "nummer": 6,
+    "gruppe": "multiplikation",
+    "name": "Multiplikatives Inverses",
+    "setup": "Sei ℝ eine Menge mit einer Addition +, einer Multiplikation · und einer Relation ≤.",
+    "prompt": "Wie lautet das Axiom (6) «Multiplikatives Inverses»? Baue die Aussage mit der Symboltastatur.",
+    "inWorten": "Zu jedem x ungleich 0 gibt es ein Element x⁻¹, das x zu 1 ergänzt.",
+    "solutions": [
+        "∀ x ∈ ℝ ∖ {0} ∃ (x⁻¹) ∈ ℝ : x · (x⁻¹) = (x⁻¹) · x = 1",
+        "∀ x ∈ ℝ ∖ {0} ∃ (x⁻¹) ∈ ℝ : x · (x⁻¹) = 1",
+        "∀ x ∈ ℝ ∖ {0} ∃ x⁻¹ ∈ ℝ : x · x⁻¹ = x⁻¹ · x = 1",
+        "∀ x ∈ ℝ ∖ {0} ∃ x⁻¹ ∈ ℝ : x · x⁻¹ = 1",
+        "∀ x ∈ ℝ ∖ {0} ∃ y ∈ ℝ : x · y = y · x = 1",
+        "∀ x ∈ ℝ ∖ {0} ∃ y ∈ ℝ : x · y = 1"
+    ],
+    "failsIn": [
+        {
+            "structure": "ℤ mit ·",
+            "why": "Zu 2 gibt es keine ganze Zahl y mit 2 · y = 1."
+        }
+    ]
+}

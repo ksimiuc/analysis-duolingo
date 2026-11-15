@@ -3,6 +3,22 @@
         {"id": "injektiv", "type": "definition"},
         {"id":"surjektiv", "type":"definition"},
         {"id": "bijektiv", "type":"definition"},
-        {"id": "inklusion", "type":"definition"}
+        {"id": "inklusion", "type":"definition"},
+        {"id": "axiom-nullelement", "type": "axiom"},
+        {"id": "axiom-additives-inverses", "type": "axiom"},
+        {"id": "axiom-assoziativ-addition", "type": "axiom"},
+        {"id": "axiom-kommutativ-addition", "type": "axiom"},
+        {"id": "axiom-einselement", "type": "axiom"},
+        {"id": "axiom-multiplikatives-inverses", "type": "axiom"},
+        {"id": "axiom-assoziativ-multiplikation", "type": "axiom"},
+        {"id": "axiom-kommutativ-multiplikation", "type": "axiom"},
+        {"id": "axiom-distributiv", "type": "axiom"},
+        {"id": "axiom-reflexiv", "type": "axiom"},
+        {"id": "axiom-antisymmetrie", "type": "axiom"},
+        {"id": "axiom-transitiv", "type": "axiom"},
+        {"id": "axiom-linearitaet", "type": "axiom"},
+        {"id": "axiom-kompatibel-addition", "type": "axiom"},
+        {"id": "axiom-kompatibel-multiplikation", "type": "axiom"},
+        {"id": "axiom-vollstaendigkeit", "type": "axiom"}
     ]
 }

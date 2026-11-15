@@ -1,0 +1,21 @@
+{
+    "id": "axiom-assoziativ-multiplikation",
+    "type": "axiom",
+    "kapitel": 2,
+    "nummer": 7,
+    "gruppe": "multiplikation",
+    "name": "Assoziativgesetz der Multiplikation",
+    "setup": "Sei ℝ eine Menge mit einer Addition +, einer Multiplikation · und einer Relation ≤.",
+    "prompt": "Wie lautet das Axiom (7) «Assoziativgesetz der Multiplikation»? Baue die Aussage mit der Symboltastatur.",
+    "inWorten": "Beim Multiplizieren dürfen Klammern umgesetzt werden.",
+    "solutions": [
+        "∀ x, y, z ∈ ℝ : x · (y · z) = (x · y) · z",
+        "∀ x, y, z ∈ ℝ : (x · y) · z = x · (y · z)"
+    ],
+    "failsIn": [
+        {
+            "structure": "ℚ ∖ {0} mit der Division / statt ·",
+            "why": "(8 / 4) / 2 = 1, aber 8 / (4 / 2) = 4."
+        }
+    ]
+}

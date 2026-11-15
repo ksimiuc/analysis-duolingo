@@ -1,0 +1,21 @@
+{
+    "id": "axiom-kompatibel-multiplikation",
+    "type": "axiom",
+    "kapitel": 2,
+    "nummer": 15,
+    "gruppe": "kompatibilitaet",
+    "name": "Kompatibilität von ≤ und ·",
+    "setup": "Sei ℝ eine Menge mit einer Addition +, einer Multiplikation · und einer Relation ≤.",
+    "prompt": "Wie lautet das Axiom (15) «Kompatibilität von ≤ und ·»? Baue die Aussage mit der Symboltastatur.",
+    "inWorten": "Das Produkt zweier nichtnegativer Elemente ist nichtnegativ.",
+    "solutions": [
+        "∀ x, y ∈ ℝ : (0 ≤ x ∧ 0 ≤ y) ⇒ 0 ≤ x · y",
+        "∀ x, y ∈ ℝ : 0 ≤ x ∧ 0 ≤ y ⇒ 0 ≤ x · y"
+    ],
+    "failsIn": [
+        {
+            "structure": "ℝ mit der umgekehrten Ordnung ≥ statt ≤",
+            "why": "0 ≥ −1 gilt, aber 0 ≥ (−1) · (−1) = 1 gilt nicht."
+        }
+    ]
+}

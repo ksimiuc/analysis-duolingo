@@ -1,0 +1,20 @@
+{
+    "id": "axiom-vollstaendigkeit",
+    "type": "axiom",
+    "kapitel": 2,
+    "nummer": 16,
+    "gruppe": "vollstaendigkeit",
+    "name": "Vollständigkeit",
+    "setup": "Sei ℝ eine Menge mit einer Addition +, einer Multiplikation · und einer Relation ≤.",
+    "prompt": "Wie lautet das Axiom (16) «Vollständigkeit»? Baue die Aussage mit der Symboltastatur.",
+    "inWorten": "Liegt eine nichtleere Menge X ganz links von einer nichtleeren Menge Y, so gibt es ein c dazwischen.",
+    "solutions": [
+        "∀ X, Y ⊆ ℝ : (X ≠ ∅ ∧ Y ≠ ∅ ∧ ∀ x ∈ X ∀ y ∈ Y : x ≤ y) ⇒ (∃ c ∈ ℝ ∀ x ∈ X ∀ y ∈ Y : x ≤ c ≤ y)"
+    ],
+    "failsIn": [
+        {
+            "structure": "ℚ",
+            "why": "X = {x ∈ ℚ : x ≤ 0 oder x² < 2} und Y = {y ∈ ℚ : y > 0 und y² > 2}: ein c dazwischen müsste c² = 2 erfüllen, und so ein c gibt es in ℚ nicht."
+        }
+    ]
+}

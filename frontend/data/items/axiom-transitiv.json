@@ -1,0 +1,21 @@
+{
+    "id": "axiom-transitiv",
+    "type": "axiom",
+    "kapitel": 2,
+    "nummer": 12,
+    "gruppe": "anordnung",
+    "name": "Transitivität von ≤",
+    "setup": "Sei ℝ eine Menge mit einer Addition +, einer Multiplikation · und einer Relation ≤.",
+    "prompt": "Wie lautet das Axiom (12) «Transitivität von ≤»? Baue die Aussage mit der Symboltastatur.",
+    "inWorten": "Aus x ≤ y und y ≤ z folgt x ≤ z.",
+    "solutions": [
+        "∀ x, y, z ∈ ℝ : (x ≤ y ∧ y ≤ z) ⇒ x ≤ z",
+        "∀ x, y, z ∈ ℝ : x ≤ y ∧ y ≤ z ⇒ x ≤ z"
+    ],
+    "failsIn": [
+        {
+            "structure": "ℝ mit der Relation |x − y| ≤ 1 statt ≤",
+            "why": "0 steht in Relation zu 1 und 1 zu 2, aber 0 nicht zu 2."
+        }
+    ]
+}

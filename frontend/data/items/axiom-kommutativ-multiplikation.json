@@ -1,0 +1,20 @@
+{
+    "id": "axiom-kommutativ-multiplikation",
+    "type": "axiom",
+    "kapitel": 2,
+    "nummer": 8,
+    "gruppe": "multiplikation",
+    "name": "Kommutativgesetz der Multiplikation",
+    "setup": "Sei ℝ eine Menge mit einer Addition +, einer Multiplikation · und einer Relation ≤.",
+    "prompt": "Wie lautet das Axiom (8) «Kommutativgesetz der Multiplikation»? Baue die Aussage mit der Symboltastatur.",
+    "inWorten": "Beim Multiplizieren spielt die Reihenfolge keine Rolle.",
+    "solutions": [
+        "∀ x, y ∈ ℝ : x · y = y · x"
+    ],
+    "failsIn": [
+        {
+            "structure": "2×2-Matrizen mit der Matrixmultiplikation",
+            "why": "Für die meisten Matrizen A, B gilt A · B ≠ B · A."
+        }
+    ]
+}

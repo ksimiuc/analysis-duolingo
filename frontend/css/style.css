@@ -48,7 +48,6 @@ a {
   font-size: var(--text-lg);
   color: var(--color-accent);
   text-decoration: none;
-  white-space: nowrap; /* never break "Analingo" into two lines, not even after the flipping A */
 }
 
 .site-header nav a {
@@ -100,15 +99,10 @@ a {
     border-color: var(--color-accent);
     text-decoration: none;
 }
-/* The "A" in the Analingo title */
-.flip {
-  display: inline-block;       /* always, not only on hover: a transform needs a box, and the box must not change on hover */
-  line-height: 1;              /* the box is exactly 1em tall, so the numbers below are exact */
-  transform-origin: 50% 43.75%; /* flip around the middle of the letter A, not the middle of its box */
-}                              /* (in this pixel font the A fills the top 7/8 of the box: its middle is 43.75% from the top) */
-
 .flip:hover {
-  transform: scaleY(-1);       /* mirror the A upside down */
+display: inline-block;
+transform: scaleY(-1);
+
 }
 
 
@@ -137,29 +131,5 @@ a {
 .progress-box p {                      /* only the count line */
   margin-top: var(--space-1);          /* a small gap below the chapter title */
 }                                      /* end of the count line */
-
-#total-points {                        /* the "Gesammelt: ... Punkte" line at the top */
-  font-family: var(--font-heading);    /* pixel font */
-  font-size: var(--text-sm);           /* small, so the h1 stays the main title */
-}                                      /* end of the total line */
-
-.pay-row {                             /* the button and its message at the bottom */
-  margin-top: var(--space-6);          /* clear space between the boxes and the button */
-}                                      /* end of the pay row */
-
-#pay-button {                          /* the "Pay 10 points" button */
-  padding: var(--space-2) var(--space-3); /* space inside the button: top/bottom, left/right */
-  font-family: var(--font-heading);    /* pixel font */
-  font-size: var(--text-sm);           /* same size as the buttons on the check page */
-  background: var(--color-accent);     /* black */
-  color: var(--color-bg);              /* yellow text */
-  border: none;                        /* no browser border */
-  cursor: pointer;                     /* hand cursor: this is clickable */
-}                                      /* end of the button */
-
-#pay-button:disabled {                 /* the button while you have fewer than 10 points */
-  opacity: 0.4;                        /* faded, so you can see it is not ready yet */
-  cursor: not-allowed;                 /* the "no" cursor instead of the hand */
-}                                      /* end of the disabled look */
 
 /* ===== end of the Fortschritt page ===== */

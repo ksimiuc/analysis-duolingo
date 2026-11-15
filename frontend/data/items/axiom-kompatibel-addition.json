@@ -1,0 +1,21 @@
+{
+    "id": "axiom-kompatibel-addition",
+    "type": "axiom",
+    "kapitel": 2,
+    "nummer": 14,
+    "gruppe": "kompatibilitaet",
+    "name": "Kompatibilität von ≤ und +",
+    "setup": "Sei ℝ eine Menge mit einer Addition +, einer Multiplikation · und einer Relation ≤.",
+    "prompt": "Wie lautet das Axiom (14) «Kompatibilität von ≤ und +»? Baue die Aussage mit der Symboltastatur.",
+    "inWorten": "Eine Ungleichung bleibt erhalten, wenn man auf beiden Seiten dasselbe addiert.",
+    "solutions": [
+        "∀ x, y, z ∈ ℝ : x ≤ y ⇒ x + z ≤ y + z",
+        "∀ x, y, z ∈ ℝ : (x ≤ y) ⇒ (x + z ≤ y + z)"
+    ],
+    "failsIn": [
+        {
+            "structure": "ℕ mit der Teilbarkeit | statt ≤",
+            "why": "1 teilt 2, aber 1 + 1 = 2 teilt 2 + 1 = 3 nicht."
+        }
+    ]
+}

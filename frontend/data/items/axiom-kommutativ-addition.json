@@ -1,0 +1,20 @@
+{
+    "id": "axiom-kommutativ-addition",
+    "type": "axiom",
+    "kapitel": 2,
+    "nummer": 4,
+    "gruppe": "addition",
+    "name": "Kommutativgesetz der Addition",
+    "setup": "Sei ℝ eine Menge mit einer Addition +, einer Multiplikation · und einer Relation ≤.",
+    "prompt": "Wie lautet das Axiom (4) «Kommutativgesetz der Addition»? Baue die Aussage mit der Symboltastatur.",
+    "inWorten": "Beim Addieren spielt die Reihenfolge keine Rolle.",
+    "solutions": [
+        "∀ x, y ∈ ℝ : x + y = y + x"
+    ],
+    "failsIn": [
+        {
+            "structure": "ℤ mit der Subtraktion − statt +",
+            "why": "2 − 1 = 1, aber 1 − 2 = −1."
+        }
+    ]
+}
