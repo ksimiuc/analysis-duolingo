@@ -36,7 +36,7 @@ for path in sorted(ITEMS.glob("*.json")):
     if item.get("id") != path.stem:
         problems.append(f"{path.name}: id is '{item.get('id')}', but the file name says '{path.stem}'")
 
-    # An item has either "parts" or plain "solutions"
+    # An item has parts adn orr solutions
     parts = item.get("parts") or [{"solutions": item.get("solutions", [])}]
     for part in parts:
         solutions = [s.replace(" ", "") for s in part.get("solutions", [])]
