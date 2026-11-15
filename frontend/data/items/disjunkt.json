@@ -1,0 +1,8 @@
+{
+  "id": "disjunkt",
+  "type": "definition",
+  "kapitel": 1,
+  "name": "Disjunktheit",
+  "setup": "Seien A,B Mengen.A und B heißen disjunkt, falls A ⋂ B = .",
+  "solutions": ["{}"]
+}

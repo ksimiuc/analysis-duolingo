@@ -10,5 +10,3 @@
         {"label": "transitiv", "solutions": ["∀ x, y, z ∈ X : x ~ y ∧ y ~ z ⇒ x ~ z",
                                             "∀ x, y, z ∈ X : (x ~ y ∧ y ~ z) ⇒ x ~ z"] }
   ]
-
-    }
