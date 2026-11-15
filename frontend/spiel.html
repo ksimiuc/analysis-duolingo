@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixelflug – Analingo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Press+Start+2P&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/spiel.css">
+</head>
+<body>
+  <!-- GAME PAGE: a plain yellow page, everything centred -->
+  <main class="game">
+    <p id="score">0</p> <!-- spiel.js writes the score here -->
+
+    <!-- The game is drawn here. width/height are GAME pixels (tiny);
+         spiel.css makes the canvas big, so every game pixel becomes a big square. -->
+    <canvas id="game" width="60" height="40"></canvas>
+
+    <p id="message">Tippe oder drücke Leertaste</p> <!-- start / game over text -->
+
+    <a class="back-button" href="fortschritt.html">Zurück</a> <!-- the return button -->
+  </main>
+
+  <script src="js/spiel.js"></script>
+</body>
+</html>

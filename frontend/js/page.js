@@ -67,6 +67,13 @@ document.getElementById("check-button").addEventListener("click", () => {
     // ----- FOR THE FORTSCHRITT PAGE: count this correct answer -----
     // Saved as one object, e.g. {"1": 3, "2": 1}: chapter number → correct answers
     const progress = JSON.parse(localStorage.getItem("progress") ?? "{}"); // read the saved counts; empty object if none yet
+
+    // The overall total: only ever goes up, paying does not touch it.
+    // If it was never saved (older visitors), start from the points they already have.
+    const pointsSoFar = Object.values(progress).reduce((sum, n) => sum + n, 0); // add up all chapter counts
+    const total = Number(localStorage.getItem("totalPoints") ?? pointsSoFar) + 1; // old total (or the sum) plus this answer
+    localStorage.setItem("totalPoints", total); // save the new overall total
+
     progress[chapter] = (progress[chapter] ?? 0) + 1; // add 1 to this chapter; ?? 0 starts a new chapter at 0
     localStorage.setItem("progress", JSON.stringify(progress)); // turn the object into text and save it in the browser
     // ----- end of the Fortschritt part; fortschritt.js reads these counts -----

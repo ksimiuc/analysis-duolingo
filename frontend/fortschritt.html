@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kapitel 1 – Analysis-Duolingo</title>
+<title>Kapitel 1 – Analingo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Press+Start+2P&display=swap">
@@ -15,7 +15,7 @@
 </head>
 <body>
 <header class="site-header">
-<a class="site-title" href="index.html">Analysis Duolingo</a>
+<a class="site-title" href="index.html" aria-label="Analingo"><span class="flip">A</span>nalingo</a>
 <nav>
 <a href="index.html">Karte</a>
 <a href="axiome.html">Axiome</a>
@@ -24,10 +24,19 @@
 </header>
 
 <main>
+    <!-- FORTSCHRITT PAGE: all points ever collected; fortschritt.js fills in the number -->
+    <p id="total-points">Gesammelt: 0 Punkte</p>
+
     <h1>Fortschritt</h1>
     <!-- FORTSCHRITT PAGE: fortschritt.js puts one box per chapter in here -->
     <div id="progress-list"></div> <!-- starts empty; filled by the script -->
     <!-- end of the Fortschritt boxes -->
+
+    <!-- FORTSCHRITT PAGE: spend 10 points, then go to the game -->
+    <div class="pay-row">
+      <button type="button" id="pay-button">Pay 10 points</button>
+      <p id="pay-message"></p> <!-- shows "not enough points" if needed -->
+    </div>
 </main>
 
 <footer class="site-footer">
