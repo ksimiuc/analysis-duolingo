@@ -41,29 +41,54 @@ function fill(template, item) {
 }
 
 // 5. Load the item. try/catch: if anything goes wrong, show it on the page
-let solution = null;
+//
+// Items come in two shapes:
+//   one question:     "solutions": ["..."]
+//   several parts:    "parts": [ { "label": "reflexiv", "solutions": ["..."] }, ... ]
+// "solutions" is always a list of ALTERNATIVES: any one of them counts as correct.
+// We turn both shapes into the same thing, a list of parts, so the rest of
+// the code only has to handle one shape.
+let parts = null;   // the list of parts to solve, each { label, solutions }; null = nothing loaded
+let partIndex = 0;  // which part you are on right now (0 = the first one)
+let question = "";  // the question text, without the "Teil 1 von 3" ending
 let chapter = null; // FOR THE FORTSCHRITT PAGE: which chapter this item belongs to, filled in below
 try {
   const response = await fetch(`data/items/${id}.json`);
   const item = await response.json();
 
   document.querySelector("h1").textContent = item.name;
-  document.getElementById("prompt").textContent = fill(PROMPTS[item.type], item);
+  question = fill(PROMPTS[item.type], item); // build the question text once; showPart() adds the part name to it
 
-  // The solution is a list of tiles: glue them into one string, like readAnswer() does
-  solution = item.solutions.join("").replaceAll(" ", "");
+  // With "parts": use them. Without: make a list with one part and no label.
+  parts = item.parts ?? [{ label: null, solutions: item.solutions }]; // ?? = "if there are no parts, use this instead"
+  showPart(); // write the question for the first part
+
   chapter = String(item.kapitel); // FOR THE FORTSCHRITT PAGE: read the chapter from the JSON; String() because some files say 1, others "1"
-} catch (error) {
+} catch (error) { // also lands here if the JSON has a shape this code does not know
   document.querySelector("h1").textContent = "Aufgabe nicht gefunden";
   feedback.textContent = `«${id}» konnte nicht geladen werden. Mit Live Server öffnen?`;
   console.error(error);
 }
 
+// Write the question, plus "Teil 2 von 3: symmetrisch" when the item has parts
+function showPart() {
+  const part = parts[partIndex];                // the part you are on
+  let text = question;                          // start with the normal question
+  if (part.label) {                             // only items with parts have a label
+    text += ` Teil ${partIndex + 1} von ${parts.length}: ${part.label}.`; // +1 because people count from 1
+  }
+  document.getElementById("prompt").textContent = text; // show it
+} // end of showPart
+
 // 6. Checking
 document.getElementById("check-button").addEventListener("click", () => {
-  if (solution === null) return; // no item loaded, nothing to compare with
+  if (parts === null) return;                   // no item loaded, nothing to compare with
+  if (partIndex >= parts.length) return;        // every part is already solved: no more points
 
-  if (readAnswer() === solution) {
+  // All correct answers for this part, without spaces (readAnswer() removes spaces too)
+  const accepted = parts[partIndex].solutions.map((s) => s.replaceAll(" ", ""));
+
+  if (accepted.includes(readAnswer())) {        // your answer matches one of them
     // ----- FOR THE FORTSCHRITT PAGE: count this correct answer -----
     // Saved as one object, e.g. {"1": 3, "2": 1}: chapter number → correct answers
     const progress = JSON.parse(localStorage.getItem("progress") ?? "{}"); // read the saved counts; empty object if none yet
@@ -77,11 +102,19 @@ document.getElementById("check-button").addEventListener("click", () => {
     progress[chapter] = (progress[chapter] ?? 0) + 1; // add 1 to this chapter; ?? 0 starts a new chapter at 0
     localStorage.setItem("progress", JSON.stringify(progress)); // turn the object into text and save it in the browser
     // ----- end of the Fortschritt part; fortschritt.js reads these counts -----
-    feedback.textContent = "Richtig!";
-  } else {
-    feedback.textContent = "Noch nicht.";
-  }
-});
+
+    partIndex += 1;                             // move on to the next part
+    if (partIndex < parts.length) {             // there is another part
+      for (const tile of answerBar.querySelectorAll(".tile")) tile.remove(); // empty the bar for it
+      showPart();                               // show its question
+      feedback.textContent = `Richtig! Weiter mit «${parts[partIndex].label}».`; // tell the user which part comes next
+    } else {                                    // that was the last part (or the only one)
+      feedback.textContent = "Richtig!"; // the whole item is solved
+    } // end of "next part or done"
+  } else { // the answer matches none of the accepted solutions
+    feedback.textContent = "Noch nicht."; // try again; partIndex stays the same
+  } // end of "right or wrong"
+}); // end of the Prüfen button
 
 
 
