@@ -1,0 +1,8 @@
+{
+  "id": "potenzmenge",
+  "type": "definition",
+  "kapitel": 1,
+  "name": "Potenzmenge",
+  "setup": "Für Mengen A,B ist 𝒫(A) = ",
+  "solutions": ["{B|B⊆A}"]
+}
