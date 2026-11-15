@@ -19,7 +19,7 @@ const GRAVITY = 60;      // how fast you speed up falling (game pixels per secon
 const FLAP = -18;        // your speed right after a flap (minus = upwards)
 const WALL_SPEED = 15;   // how fast the walls move left (game pixels per second)
 const WALL_WIDTH = 3;    // each wall is 3 pixels wide
-const GAP = 12;          // the hole in each wall is 12 pixels tall
+const GAP = 6;          // the hole in each wall is 12 pixels tall
 const WALL_SPACING = 22; // distance from one wall to the next
 
 const BIRD_X = 12; // you always stay 12 pixels from the left; the walls come to you
