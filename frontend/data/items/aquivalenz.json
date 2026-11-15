@@ -3,5 +3,12 @@
     "name": "Äquivalenz",
     "type": "definition",
     "kapitel": "1",
-    "solutions": [""]
-}
+    "setup": "Sei ~ eine Relation auf einer Menge X.",
+    "parts": [
+        { "label": "reflexiv", "solutions": ["∀ x ∈ X : x ~ x"]},
+        {"label": "symmetrisch", "solutions": ["∀ x, y ∈ X : x ~ y ⇒ y ~ x"]},
+        {"label": "transitiv", "solutions": ["∀ x, y, z ∈ X : x ~ y ∧ y ~ z ⇒ x ~ z",
+                                            "∀ x, y, z ∈ X : (x ~ y ∧ y ~ z) ⇒ x ~ z"] }
+  ]
+
+    }
