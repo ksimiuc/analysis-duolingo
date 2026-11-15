@@ -2,7 +2,7 @@
 // Later this list moves into a data file.
 const SYMBOL_GROUPS = [
   { name: "Quantoren", symbols: ["∀", "∃", "∃!", "∄"] },
-  { name: "Logik", symbols: ["∧", "∨", "¬", "⇒", "⇐", "⇔"] },
+  { name: "Logik", symbols: ["∧", "∨", "⊕", "¬", "⇒", "⇐", "⇔"] },
   { name: "Mengen", symbols: ["∈", "∉", "⊆", "⊊", "⊇", "∪", "∩", "∖", "∅", "×", "ᶜ", "𝒫", "⋃", "⋂", "|"] },
   { name: "Relationen", symbols: ["=", "≠", "<", "≤", ">", "≥", "~", "≈", "≡", ":="] },
   { name: "Zahlbereiche", symbols: ["ℕ", "ℕ₀", "ℤ", "ℚ", "ℝ", "ℂ"] },
@@ -38,6 +38,10 @@ for (const group of SYMBOL_GROUPS) {
   }
 }
 
+if(group.name="Quantoren"){
+
+}
+
 // 2. Clicking a symbol adds it as a tile to the answer
 keyboard.addEventListener("click", (event) => {
   const button = event.target.closest(".symbol");
@@ -56,3 +60,4 @@ answer.addEventListener("click", (event) => {
   const tile = event.target.closest(".tile");
   if (tile) tile.remove();
 });
+

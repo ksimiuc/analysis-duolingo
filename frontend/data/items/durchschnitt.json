@@ -1,0 +1,8 @@
+{
+  "id": "durchschnitt",
+  "type": "definition",
+  "kapitel": 1,
+  "name": "Durchschnitt",
+  "setup": "Seien A,B Mengen.",
+  "solutions": ["{x|x∈A∨x∈B}"]
+}

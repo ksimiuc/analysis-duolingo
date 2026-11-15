@@ -1,0 +1,8 @@
+{
+  "id": "komplement",
+  "type": "definition",
+  "kapitel": 1,
+  "name": "Relatives Komplement",
+  "setup": "Seien A,B Mengen.",
+  "solutions": ["{x|x∈A∧x∉B}"]
+}
