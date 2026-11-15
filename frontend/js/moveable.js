@@ -1,8 +1,4 @@
-// ===== MOVEABLE: drag the tiles around in the answer bar =====
-// Everything needed for dragging lives in this file, and only here.
-// It is loaded by check.html with type="module", so the names below
-// (bar, dragTile, ...) stay private and cannot clash with Keyboard.js.
-//
+
 // The idea in three steps:
 //   1. Press on a tile         → remember which tile and where you pressed.
 //   2. Move the pointer        → once you moved a few pixels, it counts as a drag:
@@ -13,12 +9,13 @@
 // treats all of them the same with pointer events (pointerdown, pointermove, pointerup).
 
 // ---------- Setup ----------
+//notes: mit dem chömmer symbol dragge, es wird in check html geloaded, the type is "module", 
 
 const bar = document.getElementById("answer-slots"); // the answer bar that holds the tiles
 
-const DRAG_DISTANCE = 5; // pixels you must move before a press counts as a drag (smaller = a tap)
+const DRAG_DISTANCE = 5; // pixels you must move before a press counts as a drag, so tap not enough
 
-let dragTile = null;     // the tile being pressed or dragged; null when nothing is pressed
+let dragTile = null;     // the tile being pressed or dragged; 0 when not pressed
 let startX = 0;          // where the press started, left to right (in pixels)
 let startY = 0;          // where the press started, top to bottom (in pixels)
 let dragging = false;    // false = just pressed (could still be a tap), true = really dragging
