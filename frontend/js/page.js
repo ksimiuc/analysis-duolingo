@@ -74,7 +74,7 @@ try {                                                       // "try" = attempt t
   showPart();                                               // write the question for the first part, let's gooo
 
   chapter = String(item.kapitel);                           // FOR THE FORTSCHRITT PAGE: String() because some files say 1, others "1"
-  document.body.dataset.kapitel = chapter;                  // sets <body data-kapitel="2">: Kapitel 2 items switch on the night theme
+  document.body.dataset.kapitel = chapter;                  // sets <body data-kapitel="2">: Kapitel 2 items switch on the retro theme
 } catch (error) {                                           // something went sideways (missing file, broken JSON, unknown shape)
   document.querySelector("h1").textContent = "Aufgabe nicht gefunden"; // tell the user, title edition
   feedback.textContent = `«${id}» konnte nicht geladen werden. Mit Live Server öffnen?`; // and a hint what might be up

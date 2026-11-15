@@ -10,9 +10,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Press+Start+2P&display=swap">
 <link rel="stylesheet" href="css/tokens.css">
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/kapitel-2.css"> <!-- the night theme; must come after style.css -->
+<link rel="stylesheet" href="css/kapitel-2.css"> <!-- the retro theme; must come after style.css -->
 </head>
-<body data-kapitel="2"> <!-- the axioms are Kapitel 2, so this page is night themed too -->
+<body data-kapitel="2"> <!-- the axioms are Kapitel 2, so this page gets the retro theme too -->
 <header class="site-header">
 <!-- Site title: aria-label lets screen readers say "Analingo" as one word; the A in .flip turns upside down on hover (style.css) -->
 <a class="site-title" href="index.html" aria-label="Analingo"><span class="flip">A</span>nalingo</a>
@@ -40,5 +40,6 @@
 </footer>
 
 <script type="module" src="js/axiome.js"></script> <!-- module, because it uses await -->
+<script type="module" src="js/kapitel-2.js"></script> <!-- title bar, trail, Epsi, taskbar: only on Kapitel 2 -->
 </body>
 </html>
