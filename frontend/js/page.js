@@ -57,14 +57,14 @@ try {
   const item = await response.json();
 
   document.querySelector("h1").textContent = item.name;
-  question = fill(PROMPTS[item.type], item);
+  question = fill(PROMPTS[item.type], item); // build the question text once; showPart() adds the part name to it
 
   // With "parts": use them. Without: make a list with one part and no label.
-  parts = item.parts ?? [{ label: null, solutions: item.solutions }];
+  parts = item.parts ?? [{ label: null, solutions: item.solutions }]; // ?? = "if there are no parts, use this instead"
   showPart(); // write the question for the first part
 
   chapter = String(item.kapitel); // FOR THE FORTSCHRITT PAGE: read the chapter from the JSON; String() because some files say 1, others "1"
-} catch (error) {
+} catch (error) { // also lands here if the JSON has a shape this code does not know
   document.querySelector("h1").textContent = "Aufgabe nicht gefunden";
   feedback.textContent = `«${id}» konnte nicht geladen werden. Mit Live Server öffnen?`;
   console.error(error);
@@ -78,7 +78,7 @@ function showPart() {
     text += ` Teil ${partIndex + 1} von ${parts.length}: ${part.label}.`; // +1 because people count from 1
   }
   document.getElementById("prompt").textContent = text; // show it
-}
+} // end of showPart
 
 // 6. Checking
 document.getElementById("check-button").addEventListener("click", () => {
@@ -107,14 +107,14 @@ document.getElementById("check-button").addEventListener("click", () => {
     if (partIndex < parts.length) {             // there is another part
       for (const tile of answerBar.querySelectorAll(".tile")) tile.remove(); // empty the bar for it
       showPart();                               // show its question
-      feedback.textContent = `Richtig! Weiter mit «${parts[partIndex].label}».`;
+      feedback.textContent = `Richtig! Weiter mit «${parts[partIndex].label}».`; // tell the user which part comes next
     } else {                                    // that was the last part (or the only one)
-      feedback.textContent = "Richtig!";
-    }
-  } else {
-    feedback.textContent = "Noch nicht.";
-  }
-});
+      feedback.textContent = "Richtig!"; // the whole item is solved
+    } // end of "next part or done"
+  } else { // the answer matches none of the accepted solutions
+    feedback.textContent = "Noch nicht."; // try again; partIndex stays the same
+  } // end of "right or wrong"
+}); // end of the Prüfen button
 
 
 

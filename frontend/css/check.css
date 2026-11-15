@@ -1,21 +1,21 @@
 /* Title on the left, buttons pushed to the right */
-.title-row {
-  display: flex;
+.title-row {                     /* the row that holds the h1 and the buttons */
+  display: flex;                 /* put the title and the buttons side by side */
   flex-wrap: wrap;               /* on a phone the buttons drop below the title */
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-2);
-}
+  align-items: center;           /* line them up on their middles, top to bottom */
+  justify-content: space-between; /* title to the far left, buttons to the far right */
+  gap: var(--space-2);           /* space between title and buttons */
+}                                /* end of the title row */
 
-.title-row h1 {
-  margin: 0;
-}
+.title-row h1 {                  /* the title inside that row */
+  margin: 0;                     /* remove the browser's default space, so it lines up with the buttons */
+}                                /* end of the title */
 
 /* The four buttons in their own little row */
-.actions {
-  display: flex;
-  gap: var(--space-2);
-}
+.actions {                       /* the box around Prüfen, ⌫, Leeren, Random */
+  display: flex;                 /* the buttons side by side */
+  gap: var(--space-2);           /* space between the buttons */
+}                                /* end of the button row */
 
 #check-button,
 #backspace-button,

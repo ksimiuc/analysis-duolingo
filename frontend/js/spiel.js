@@ -40,12 +40,12 @@ function reset() {                  // put everything back to the start
   state = "ready";                  // wait for the first tap
   scoreText.textContent = "0";      // show 0
   messageText.textContent = "Tippe oder drücke Leertaste"; // explain how to start
-}
+} // end of reset
 
 function addWall(x) {                                       // make a new wall at position x
   const gapTop = 4 + Math.floor(Math.random() * (HEIGHT - GAP - 8)); // random hole, at least 4px from top and bottom
   walls.push({ x: x, gapTop: gapTop, passed: false });      // add it to the list
-}
+} // end of addWall
 
 // ---------- Input: tap, click or Space ----------
 
@@ -57,14 +57,14 @@ function flap() {                          // what one tap does
     addWall(WIDTH);                        // first wall just off the right edge
   }
   speed = FLAP;                            // jump upwards
-}
+} // end of flap
 
 canvas.addEventListener("pointerdown", flap);   // mouse click or finger tap on the game
 document.addEventListener("keydown", (event) => { // any key press on the page
   if (event.code !== "Space") return;           // only the Space bar counts
   event.preventDefault();                       // stop Space from scrolling the page
   flap();                                       // fly up
-});
+}); // end of the key listener
 
 // ---------- Moving everything (one small step of time) ----------
 
@@ -81,43 +81,43 @@ function update(seconds) {                       // seconds = time since the las
   if (walls[0].x < -WALL_WIDTH) walls.shift();   // oldest wall left the screen: forget it
 
   // Did you pass a wall? +1 point
-  for (const wall of walls) {
+  for (const wall of walls) {                    // look at every wall
     if (!wall.passed && wall.x + WALL_WIDTH < BIRD_X) { // the wall is fully behind you
       wall.passed = true;                        // count each wall only once
       score += 1;                                // one more point
       scoreText.textContent = score;             // show it
-    }
-  }
+    } // end of "passed a wall"
+  } // end of the score loop
 
   // Did you crash?
   const y = Math.round(birdY);                   // the pixel row you are in
   if (y < 0 || y >= HEIGHT) gameOver();          // flew off the top or fell off the bottom
-  for (const wall of walls) {
+  for (const wall of walls) {                    // check every wall for a crash
     const insideWall = BIRD_X >= Math.round(wall.x) && BIRD_X < Math.round(wall.x) + WALL_WIDTH; // same columns as the wall
     const insideGap = y >= wall.gapTop && y < wall.gapTop + GAP;                                   // in the hole
     if (insideWall && !insideGap) gameOver();    // hit the black part
-  }
-}
+  } // end of the crash loop
+} // end of update
 
 function gameOver() {                            // the crash
   state = "over";                                // stop moving
   messageText.textContent = `Aus! ${score} Punkte. Tippe für nochmal.`; // show the result
-}
+} // end of gameOver
 
 // ---------- Drawing ----------
 
-function draw() {
+function draw() {                                // paint one picture of the game (called ~60 times a second)
   pen.fillStyle = "#ffc506";                     // yellow (the same as --color-bg)
   pen.fillRect(0, 0, WIDTH, HEIGHT);             // paint over the last picture
 
   pen.fillStyle = "#000000";                     // black for everything else
-  for (const wall of walls) {
+  for (const wall of walls) {                    // draw every wall
     const x = Math.round(wall.x);                // walls sit on whole pixels, so they stay sharp
     pen.fillRect(x, 0, WALL_WIDTH, wall.gapTop); // the part above the hole
     pen.fillRect(x, wall.gapTop + GAP, WALL_WIDTH, HEIGHT - wall.gapTop - GAP); // the part below
-  }
+  } // end of the wall loop
   pen.fillRect(BIRD_X, Math.round(birdY), 1, 1); // you: exactly one pixel
-}
+} // end of draw
 
 // ---------- The loop: move, draw, repeat ~60 times a second ----------
 
@@ -129,7 +129,7 @@ function loop(now) {                             // the browser calls this befor
   update(seconds);                               // move
   draw();                                        // paint
   requestAnimationFrame(loop);                   // ask to be called again next frame
-}
+} // end of loop
 
 reset();                                         // set up the first round
 requestAnimationFrame(loop);                     // start the loop
