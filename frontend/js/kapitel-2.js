@@ -115,6 +115,7 @@ const TIPS = [
   "Dein Fortschritt bleibt nur in diesem Browser gespeichert.",
   "Fahr mal mit der Maus über das A im Logo.",
   "Mit _ □ × oben rechts kannst du das Fenster klein, gross oder zu machen.",
+  "Reelle Zahlen for yourself",
   "Mit «Weiter →» kommst du zum nächsten Axiom.",
 ];
 
