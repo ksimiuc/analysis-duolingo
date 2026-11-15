@@ -38,10 +38,6 @@ for (const group of SYMBOL_GROUPS) {
   }
 }
 
-if(group.name="Quantoren"){
-
-}
-
 // 2. Clicking a symbol adds it as a tile to the answer
 keyboard.addEventListener("click", (event) => {
   const button = event.target.closest(".symbol");
