@@ -1,0 +1,8 @@
+{
+  "id": "kartesisch",
+  "type": "definition",
+  "kapitel": 1,
+  "name": "Kartesisches Produkt",
+  "setup": "Seien A,B Mengen. A×B = .",
+  "solutions": ["{(x,y)|x∈A∧y∈B}"]
+}
