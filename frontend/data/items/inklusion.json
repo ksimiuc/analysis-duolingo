@@ -1,0 +1,8 @@
+{
+  "id": "inklusion",
+  "type": "definition",
+  "kapitel": 1,
+  "name": "Inklusionen",
+  "setup": "Seien A,B Mengen.",
+  "solutions": ["∀x∈A:x∈B"]
+}

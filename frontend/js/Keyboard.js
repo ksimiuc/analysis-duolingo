@@ -2,7 +2,7 @@
 // Later this list moves into a data file.
 const SYMBOL_GROUPS = [
   { name: "Quantoren", symbols: ["∀", "∃", "∃!", "∄"] },
-  { name: "Logik", symbols: ["∧", "∨", "¬", "⇒", "⇐", "⇔"] },
+  { name: "Logik", symbols: ["∧", "∨", "⊕", "¬", "⇒", "⇐", "⇔"] },
   { name: "Mengen", symbols: ["∈", "∉", "⊆", "⊊", "⊇", "∪", "∩", "∖", "∅", "×", "ᶜ", "𝒫", "⋃", "⋂", "|"] },
   { name: "Relationen", symbols: ["=", "≠", "<", "≤", ">", "≥", "~", "≈", "≡", ":="] },
   { name: "Zahlbereiche", symbols: ["ℕ", "ℕ₀", "ℤ", "ℚ", "ℝ", "ℂ"] },
@@ -56,3 +56,4 @@ answer.addEventListener("click", (event) => {
   const tile = event.target.closest(".tile");
   if (tile) tile.remove();
 });
+

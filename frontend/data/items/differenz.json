@@ -1,0 +1,8 @@
+{
+  "id": "differenz",
+  "type": "definition",
+  "kapitel": 1,
+  "name": "Differenzen",
+  "setup": "Seien A,B Mengen.",
+  "solutions": ["{x|x∈A⊕x∈B}"]
+}
