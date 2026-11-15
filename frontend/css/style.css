@@ -108,7 +108,6 @@ a {
 }                              /* (in this pixel font the A fills the top 7/8 of the box: its middle is 43.75% from the top) */
 
 .flip:hover {
-<<<<<<< Updated upstream
   transform: scaleY(-1);       /* mirror the A upside down */
 }
 
@@ -164,9 +163,3 @@ a {
 }                                      /* end of the disabled look */
 
 /* ===== end of the Fortschritt page ===== */
-=======
-display: inline-block;
-transform: scaleY(-1);
-
-}
->>>>>>> Stashed changes
