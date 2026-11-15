@@ -29,7 +29,14 @@ if (list.children.length === 0) { // no boxes were added
 } // end of the check
 
 // 5. The "Pay 10 points" button
-document.getElementById("pay-button").addEventListener("click", () => { // runs when the button is clicked
+const payButton = document.getElementById("pay-button"); // the button at the bottom of the page
+
+if (points < PRICE) { // not enough points yet
+  payButton.disabled = true; // the button stays visible, but greyed out and not clickable
+  document.getElementById("pay-message").textContent = `Noch ${PRICE - points} Punkte bis zum Spiel.`; // how many are still missing
+} // end of the check
+
+payButton.addEventListener("click", () => { // runs when the button is clicked
   if (points < PRICE) { // not enough points to pay
     document.getElementById("pay-message").textContent = `Du brauchst ${PRICE} Punkte, du hast ${points}.`; // explain why nothing happens
     return; // stop here: no paying, no game

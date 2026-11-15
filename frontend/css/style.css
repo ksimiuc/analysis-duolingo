@@ -157,4 +157,9 @@ a {
   cursor: pointer;                     /* hand cursor: this is clickable */
 }                                      /* end of the button */
 
+#pay-button:disabled {                 /* the button while you have fewer than 10 points */
+  opacity: 0.4;                        /* faded, so you can see it is not ready yet */
+  cursor: not-allowed;                 /* the "no" cursor instead of the hand */
+}                                      /* end of the disabled look */
+
 /* ===== end of the Fortschritt page ===== */
