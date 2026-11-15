@@ -3,15 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kapitel 1 – Analingo</title>
+<title>Kapitel 2 – Analingo</title> <!-- the text on the browser tab -->
 <!-- Fonts from Google: the two preconnect lines make the download start early, the third loads IBM Plex Mono and the pixel font Press Start 2P. Every page needs these three lines. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Press+Start+2P&display=swap">
 <link rel="stylesheet" href="css/tokens.css">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/kapitel-2.css"> <!-- the night theme; must come after style.css -->
 </head>
-<body>
+<body data-kapitel="2"> <!-- data-kapitel="2" switches on the night theme in kapitel-2.css -->
 <header class="site-header">
 <!-- Site title: aria-label lets screen readers say "Analingo" as one word; the A in .flip turns upside down on hover (style.css) -->
 <a class="site-title" href="index.html" aria-label="Analingo"><span class="flip">A</span>nalingo</a>
@@ -24,11 +25,19 @@
 
 <main>
 <h1>Kapitel 2</h1>
-<ul class="item-list">
-<li><a href="interface.html">Injektiv, surjektiv, bijektiv</a></li>
-<li><a href="#">Äquivalenzrelationen</a></li>
-<li><a href="#">Lemma 1.52: Funktionen durch Fallunterscheidung</a></li>
-</ul>
+<p>Die reellen Zahlen.</p>
+
+<!-- The two big buttons. They are links (<a>), because they take you to another page. -->
+<div class="choice-grid">
+  <a class="choice" href="axiome.html">
+    <span class="choice-title">Axiome</span>
+    <span>Alle 16 Axiome der reellen Zahlen, eins nach dem anderen.</span>
+  </a>
+  <a class="choice" href="kapitel-2-definitionen.html">
+    <span class="choice-title">Definitionen &amp; Lemmas</span> <!-- &amp; is how HTML writes the & sign -->
+    <span>Alles andere aus Kapitel 2.</span>
+  </a>
+</div>
 </main>
 
 <footer class="site-footer">

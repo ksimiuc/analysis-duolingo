@@ -1,0 +1,22 @@
+{
+    "id": "axiom-nullelement",
+    "type": "axiom",
+    "kapitel": 2,
+    "nummer": 1,
+    "gruppe": "addition",
+    "name": "Nullelement",
+    "setup": "Sei ℝ eine Menge mit einer Addition +, einer Multiplikation · und einer Relation ≤.",
+    "prompt": "Wie lautet das Axiom (1) «Nullelement»? Baue die Aussage mit der Symboltastatur.",
+    "inWorten": "Es gibt ein Element 0, das beim Addieren nichts ändert.",
+    "solutions": [
+        "∃ 0 ∈ ℝ ∀ x ∈ ℝ : x + 0 = 0 + x = x",
+        "∃ 0 ∈ ℝ ∀ x ∈ ℝ : x + 0 = x",
+        "∃ 0 ∈ ℝ ∀ x ∈ ℝ : 0 + x = x"
+    ],
+    "failsIn": [
+        {
+            "structure": "ℕ = {1, 2, 3, …} mit +",
+            "why": "Kein n in ℕ erfüllt x + n = x, denn 0 gehört nicht zu ℕ."
+        }
+    ]
+}

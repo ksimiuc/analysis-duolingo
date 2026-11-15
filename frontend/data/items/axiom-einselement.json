@@ -1,0 +1,22 @@
+{
+    "id": "axiom-einselement",
+    "type": "axiom",
+    "kapitel": 2,
+    "nummer": 5,
+    "gruppe": "multiplikation",
+    "name": "Einselement",
+    "setup": "Sei ℝ eine Menge mit einer Addition +, einer Multiplikation · und einer Relation ≤.",
+    "prompt": "Wie lautet das Axiom (5) «Einselement»? Baue die Aussage mit der Symboltastatur.",
+    "inWorten": "Es gibt ein von 0 verschiedenes Element 1, das beim Multiplizieren nichts ändert.",
+    "solutions": [
+        "∃ 1 ∈ ℝ ∖ {0} ∀ x ∈ ℝ : x · 1 = 1 · x = x",
+        "∃ 1 ∈ ℝ ∖ {0} ∀ x ∈ ℝ : x · 1 = x",
+        "∃ 1 ∈ ℝ ∖ {0} ∀ x ∈ ℝ : 1 · x = x"
+    ],
+    "failsIn": [
+        {
+            "structure": "Die geraden ganzen Zahlen mit ·",
+            "why": "Kein gerades e erfüllt 2 · e = 2, denn dafür müsste e = 1 sein."
+        }
+    ]
+}

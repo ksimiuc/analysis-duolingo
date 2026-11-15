@@ -1,0 +1,20 @@
+{
+    "id": "axiom-reflexiv",
+    "type": "axiom",
+    "kapitel": 2,
+    "nummer": 10,
+    "gruppe": "anordnung",
+    "name": "Reflexivität von ≤",
+    "setup": "Sei ℝ eine Menge mit einer Addition +, einer Multiplikation · und einer Relation ≤.",
+    "prompt": "Wie lautet das Axiom (10) «Reflexivität von ≤»? Baue die Aussage mit der Symboltastatur.",
+    "inWorten": "Jedes Element ist kleiner oder gleich sich selbst.",
+    "solutions": [
+        "∀ x ∈ ℝ : x ≤ x"
+    ],
+    "failsIn": [
+        {
+            "structure": "ℝ mit < statt ≤",
+            "why": "x < x ist für kein x wahr."
+        }
+    ]
+}

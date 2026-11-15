@@ -1,0 +1,21 @@
+{
+    "id": "axiom-linearitaet",
+    "type": "axiom",
+    "kapitel": 2,
+    "nummer": 13,
+    "gruppe": "anordnung",
+    "name": "Linearität von ≤",
+    "setup": "Sei ℝ eine Menge mit einer Addition +, einer Multiplikation · und einer Relation ≤.",
+    "prompt": "Wie lautet das Axiom (13) «Linearität von ≤»? Baue die Aussage mit der Symboltastatur.",
+    "inWorten": "Je zwei Elemente sind vergleichbar.",
+    "solutions": [
+        "∀ x, y ∈ ℝ : x ≤ y ∨ y ≤ x",
+        "∀ x, y ∈ ℝ : (x ≤ y) ∨ (y ≤ x)"
+    ],
+    "failsIn": [
+        {
+            "structure": "Die Teilmengen von {1, 2} mit ⊆ statt ≤",
+            "why": "Weder {1} ⊆ {2} noch {2} ⊆ {1}."
+        }
+    ]
+}

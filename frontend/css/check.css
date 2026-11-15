@@ -66,3 +66,30 @@
   position: relative;
   top: 1px;
 }
+/* ===== Tip and Zurück/Weiter (check page) ===== */
+
+#hint {                                  /* the "Tipp" box */
+  margin-bottom: var(--space-3);         /* space before the keyboard */
+  color: var(--color-accent);            /* same colour as the other text */
+}                                        /* end of the tip box */
+
+#hint summary {                          /* the clickable word "Tipp" */
+  font-family: var(--font-heading);      /* pixel font */
+  font-size: var(--text-sm);             /* small */
+  cursor: pointer;                       /* hand cursor: you can click it */
+}                                        /* end of the summary */
+
+.item-nav {                              /* "← Zurück · Axiom 3 von 16 · Weiter →" */
+  display: flex;                         /* the three pieces in a row */
+  justify-content: space-between;        /* Zurück far left, Weiter far right, counter in the middle */
+  margin-bottom: var(--space-3);         /* space before the keyboard */
+  font-family: var(--font-heading);      /* pixel font */
+  font-size: var(--text-sm);             /* small */
+  color: var(--color-accent);            /* accent colour */
+}                                        /* end of the nav row */
+
+.item-nav a {                            /* the two links */
+  color: var(--color-accent);            /* accent colour, not the browser's default blue */
+}                                        /* end of the links */
+
+/* ===== end of tip and nav ===== */

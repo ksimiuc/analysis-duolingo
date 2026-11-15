@@ -1,0 +1,21 @@
+{
+    "id": "axiom-antisymmetrie",
+    "type": "axiom",
+    "kapitel": 2,
+    "nummer": 11,
+    "gruppe": "anordnung",
+    "name": "Antisymmetrie von ≤",
+    "setup": "Sei ℝ eine Menge mit einer Addition +, einer Multiplikation · und einer Relation ≤.",
+    "prompt": "Wie lautet das Axiom (11) «Antisymmetrie von ≤»? Baue die Aussage mit der Symboltastatur.",
+    "inWorten": "Gilt x ≤ y und y ≤ x, so sind x und y gleich.",
+    "solutions": [
+        "∀ x, y ∈ ℝ : (x ≤ y ∧ y ≤ x) ⇒ x = y",
+        "∀ x, y ∈ ℝ : x ≤ y ∧ y ≤ x ⇒ x = y"
+    ],
+    "failsIn": [
+        {
+            "structure": "ℤ mit der Teilbarkeit | statt ≤",
+            "why": "2 teilt −2 und −2 teilt 2, aber 2 ≠ −2."
+        }
+    ]
+}

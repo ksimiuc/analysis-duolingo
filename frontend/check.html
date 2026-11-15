@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/keyboard.css">
   <link rel="stylesheet" href="css/check.css">
+  <link rel="stylesheet" href="css/kapitel-2.css"> <!-- night theme; only switches on when page.js sets data-kapitel="2" -->
 </head>
 <body>
   <header class="site-header">
@@ -50,6 +51,16 @@
     <!-- page.js writes "Richtig!" or "Noch nicht" here -->
     <p id="feedback"></p>
 
+    <!-- The tip: <details> opens and closes on click all by itself, no JavaScript needed.
+         "hidden" keeps it invisible until page.js finds a tip in the item file. -->
+    <details id="hint" hidden>
+      <summary>Tipp</summary>
+      <p id="hint-text"></p>
+    </details>
+
+    <!-- weiter.js fills this with "← Zurück · Axiom 3 von 16 · Weiter →" -->
+    <nav class="item-nav" id="item-nav"></nav>
+
     <div id="symbol-keyboard"></div>
   </main>
 
@@ -58,6 +69,7 @@
   <script type="module" src="js/moveable.js"></script>
   <!-- type="module" is needed because page.js uses await -->
   <script type="module" src="js/page.js"></script>
+  <script type="module" src="js/weiter.js"></script> <!-- the Zurück / Weiter links -->
   <script type="module" src="js/random.js"></script>
 </body>
 </html>

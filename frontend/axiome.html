@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Axiome – Analingo</title> <!-- the text on the browser tab -->
+<!-- Fonts from Google: the two preconnect lines make the download start early, the third loads IBM Plex Mono and the pixel font Press Start 2P. Every page needs these three lines. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Press+Start+2P&display=swap">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/kapitel-2.css"> <!-- the night theme; must come after style.css -->
+</head>
+<body data-kapitel="2"> <!-- the axioms are Kapitel 2, so this page is night themed too -->
+<header class="site-header">
+<!-- Site title: aria-label lets screen readers say "Analingo" as one word; the A in .flip turns upside down on hover (style.css) -->
+<a class="site-title" href="index.html" aria-label="Analingo"><span class="flip">A</span>nalingo</a>
+<nav>
+<a href="index.html">Karte</a>
+<a href="axiome.html">Axiome</a>
+<a href="fortschritt.html">Fortschritt</a>
+</nav>
+</header>
+
+<main>
+<h1>Axiome</h1>
+<p><a href="kapitel-2.html">← Kapitel 2</a></p> <!-- back to the two buttons -->
+
+<!-- axiome.js points this at the first axiom -->
+<a class="start-button" id="start-button" href="#">Alle 16 der Reihe nach</a>
+
+<!-- axiome.js fills this with one block per group, in two columns -->
+<div class="axiom-groups" id="axiom-groups">Lädt …</div>
+</main>
+
+<footer class="site-footer">
+<!-- Credit the source, as the project requires. axiome.js fills in the link from axiom-gruppen.json -->
+<p>Axiome nach dem Analysis-Skript von Einsiedler, Jossen und Wieser (<a id="source-link" href="#">Skript</a>).</p>
+</footer>
+
+<script type="module" src="js/axiome.js"></script> <!-- module, because it uses await -->
+</body>
+</html>

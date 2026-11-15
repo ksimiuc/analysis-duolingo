@@ -60,13 +60,21 @@ try {                                                       // "try" = attempt t
   const item = await response.json();                       // turn the file's text into a real JavaScript object
 
   document.querySelector("h1").textContent = item.name;     // put the item's name in the big title
-  question = fill(PROMPTS[item.type], item);                // build the question text once; showPart() adds the part name to it
+  question = item.prompt                                    // does the item bring its own finished question? (the axioms do)
+    ? `${item.setup ?? ""} ${item.prompt}`                // yes: setup + that question. ? : = a tiny if/else in one line
+    : fill(PROMPTS[item.type], item);                       // no: build it from the template, like before
+
+  if (item.inWorten) {                                      // a tip in plain words? (the axioms have one)
+    document.getElementById("hint-text").textContent = item.inWorten; // put the tip text in the box
+    document.getElementById("hint").hidden = false;        // and show the closed "Tipp" box; one click opens it
+  }                                                         // end of the tip
 
   // With "parts": use them. Without: make a list with one part and no label.
   parts = item.parts ?? [{ label: null, solutions: item.solutions }]; // ?? = "if there are no parts, use this instead"
   showPart();                                               // write the question for the first part, let's gooo
 
   chapter = String(item.kapitel);                           // FOR THE FORTSCHRITT PAGE: String() because some files say 1, others "1"
+  document.body.dataset.kapitel = chapter;                  // sets <body data-kapitel="2">: Kapitel 2 items switch on the night theme
 } catch (error) {                                           // something went sideways (missing file, broken JSON, unknown shape)
   document.querySelector("h1").textContent = "Aufgabe nicht gefunden"; // tell the user, title edition
   feedback.textContent = `«${id}» konnte nicht geladen werden. Mit Live Server öffnen?`; // and a hint what might be up

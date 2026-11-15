@@ -1,0 +1,58 @@
+{
+    "hinweis": "Die 16 Axiome der reellen Zahlen (Abschnitt 2.1). Formeln nach der öffentlichen Fassung 2018/19 des Skripts (Einsiedler, Jossen, Wieser). Vor dem Veröffentlichen mit der eigenen Fassung des Skripts abgleichen.",
+    "quelle": "https://awieser1.github.io/lecture_notes/Analysis-Skript.pdf",
+    "gruppen": [
+        {
+            "id": "addition",
+            "name": "Körperaxiome der Addition",
+            "axiome": [
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "id": "multiplikation",
+            "name": "Körperaxiome der Multiplikation",
+            "axiome": [
+                5,
+                6,
+                7,
+                8
+            ]
+        },
+        {
+            "id": "distributiv",
+            "name": "Distributivgesetz",
+            "axiome": [
+                9
+            ]
+        },
+        {
+            "id": "anordnung",
+            "name": "Axiome der Ordnungsrelation",
+            "axiome": [
+                10,
+                11,
+                12,
+                13
+            ]
+        },
+        {
+            "id": "kompatibilitaet",
+            "name": "Kompatibilität von Ordnung und Körperstruktur",
+            "axiome": [
+                14,
+                15
+            ]
+        },
+        {
+            "id": "vollstaendigkeit",
+            "name": "Vollständigkeitsaxiom",
+            "axiome": [
+                16
+            ]
+        }
+    ]
+}
